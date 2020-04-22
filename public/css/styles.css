@@ -565,6 +565,10 @@ Contact Page
   color: black;
 }
 
+#contact_info > img:last-child {
+  margin-bottom: -5px; /* Makes the image at the bottom of the page flush with the footer */
+}
+
 /*************************************************************************
 MEDIA QUERIES
 *************************************************************************/
