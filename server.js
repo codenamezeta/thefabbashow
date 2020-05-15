@@ -15,13 +15,6 @@ oAuth2Client.setCredentials({
 
 const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
 
-// let eventName = "init";
-// let eventLocation = "init";
-// let eventDescription = "init";
-// let venueLink = "https://google.com/maps/search/";
-
-//let eventsList = [];
-
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 
@@ -32,10 +25,11 @@ calendar.events.list(
     maxResults: 10,
     singleEvents: true,
     orderBy: "startTime",
+    // See options: https://googleapis.dev/nodejs/googleapis/latest/calendar/interfaces/Params$Resource$Events$List.html
   },
   (err, res) => {
     if (err) {
-      return console.log("The API returned an error: " + err);
+      return console.error("The API returned an error: " + err);
     }
     if (res) {
       eventsList = JSON.stringify(res.data.items);
@@ -59,6 +53,6 @@ app.get("/contact", function (req, res) {
   res.render("contact");
 });
 
-app.listen(process.env.PORT || 5000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("Server is running");
 });
