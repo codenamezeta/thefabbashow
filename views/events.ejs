@@ -26,7 +26,7 @@
             <% if (htmlIndex !== -1) {                                                                %>
               <% eventVenueName = eventDescription.substring(0, htmlIndex);                           %>
             <% }                                                                                      %>
-            <% let linkIndex = eventDescription.indexOf('"http');                                     %>
+            <% let linkIndex = (eventDescription.indexOf('"http') + 1);                               %>
             <% let endOfLink = eventDescription.lastIndexOf('"');                                     %>
             <% if (linkIndex !== -1) {                                                                %>
               <% ticketLink = eventDescription.substring(linkIndex, endOfLink);                       %>
