@@ -1,0 +1,44 @@
+<%- include("head") -%>
+
+  <body id="homepage_body">
+    <%- include("nav") -%>
+
+    <main>
+      <div class="events-bg">
+        <h1>Upcoming Events</h1>
+        <div class="container" id="events_list">
+          <% let events = JSON.parse(eventsList);                                                     %>
+          <% let mapsBaseURL = "https://www.google.com/maps/place/";                                  %>
+          <% let ticketLink = "/events";                                                              %>
+          <% for (i=0; i<events.length; i++) {                                                        %>
+            <% let eventTitle = events[i].summary;                                                    %>
+            <% let eventDate = events[i].start.date || events[i].start.dateTime;                      %>
+            <% let eventDateNum = eventDate.substring(8, 10);                                         %>
+            <% let eventMon = eventDate.substring(5, 7);                                              %>
+            <% if (events[i].description) {                                                           %>
+              <% eventDescription = events[i].description;                                            %>
+              <% eventVenueName = events[i].description;                                              %>
+            <% } else {                                                                               %>
+              <% eventDescription = "Check back soon for more details.";                              %>
+              <% eventVenueName = "T.B.A.";                                                           %>
+            <% };                                                                                     %>
+            <% let htmlIndex = eventDescription.indexOf("<");                                         %>
+            <% if (htmlIndex !== -1) {                                                                %>
+              <% eventVenueName = eventDescription.substring(0, htmlIndex);                           %>
+            <% }                                                                                      %>
+            <% let linkIndex = (eventDescription.indexOf('"http') + 1);                               %>
+            <% let endOfLink = eventDescription.lastIndexOf('"');                                     %>
+            <% if (linkIndex !== -1) {                                                                %>
+              <% ticketLink = eventDescription.substring(linkIndex, endOfLink);                       %>
+            <% }                                                                                      %>
+            <% let eventVenueAddress = events[i].location;                                            %>
+            <%- include("event", {mapsBaseURL: mapsBaseURL, eventTitle: eventTitle, eventDateNum: eventDateNum, eventMon: eventMon, eventVenueName: eventVenueName, ticketLink: ticketLink, eventVenueAddress: eventVenueAddress}) -%>
+          <% }                                                                                        %>
+                    
+        </div>
+      </div>
+    </main>
+
+    <%- include("footer") -%>
+  </body>
+</html>
