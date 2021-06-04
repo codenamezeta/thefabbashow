@@ -1,6 +1,12 @@
 /*************************************************************************
 GLOBAL STYLES
 *************************************************************************/
+.pretty-bar {
+  width: 100vw;
+  height: 500px;
+  background-image: linear-gradient(to right, #c50, #005f69);
+}
+
 @font-face {
   font-family: 'Alba';
   src: url(../fonts/ALBA____.TTF);
@@ -131,7 +137,8 @@ a.button {
   line-height: 1.2;
   text-align: center;
   text-decoration: none;
-  margin-right: 0.5rem;
+  margin: 0.5em 0;
+  /* margin-right: 0.5rem; */
   box-shadow: 1px 1px 2px #000;
   cursor: pointer;
 }
@@ -156,6 +163,10 @@ a.button:active {
   transform: scale(0.98);
   box-shadow: none;
   transition: 0.25s ease;
+}
+
+.btn-group a.button {
+  margin-right: 1em;
 }
 
 /* button > a {
@@ -238,7 +249,146 @@ Home Page
   margin: 2% auto;
 }
 
-#play_button {
+/** For displaying the video controls over the fullscreen video section */
+.video-controls {
+  transition: none;
+  padding: 1em 2em;
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  color: white;
+  background-image: linear-gradient(to bottom, #00000000, #000000ff);
+}
+
+.video-controls svg {
+  font-size: 2em;
+  /* Since SVG's aren't like other text, the shadow can only be applied via filter: drop-shadow() */
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+}
+
+.video-controls svg:hover {
+  font-size: 2.08em;
+  /* padding-bottom: 0.5em; */
+}
+
+#volume_slider {
+  max-width: 7%;
+  min-width: 60px;
+  margin: 0 1em 0 auto;
+}
+
+#seek_slider {
+  width: 100%;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  margin: 1em 0;
+  width: 100%;
+  /* height: 100px; */
+  background: none;
+}
+input[type='range']:focus {
+  outline: none;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: darkgoldenrod;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-image: url('../imgs/disco-ball-152.png');
+  background-position: center;
+  background-size: contain;
+  /* background: #ffffff; */
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px;
+}
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: darkgoldenrod;
+}
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: darkgoldenrod;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-image: url('../imgs/disco-ball-152.png');
+  background-position: center;
+  background-size: contain;
+  /* background: #ffffff; */
+  cursor: pointer;
+}
+input[type='range']::-ms-track {
+  width: 100%;
+  /* height: 8.4px; */
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type='range']::-ms-fill-lower {
+  background: darkgoldenrod;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type='range']::-ms-fill-upper {
+  background: darkgoldenrod;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type='range']::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff00;
+  cursor: pointer;
+}
+input[type='range']:focus::-ms-fill-lower {
+  background: darkgoldenrod;
+}
+input[type='range']:focus::-ms-fill-upper {
+  background: darkgoldenrod;
+}
+
+/** For hiding the video controls over the fullscreen video section. This class is applied via JS. See Home.jsx */
+.hide-video-controls,
+.hide-video-controls > input#seek_slider {
+  transition: 1s ease-in;
+  /* color: transparent;
+  background: transparent;
+  border: none; */
+  opacity: 0;
+}
+
+/* #play_button {
   font-size: 1.5em;
   padding: 2.5%;
   vertical-align: middle;
@@ -249,7 +399,7 @@ Home Page
   border-radius: 50%;
   box-shadow: 1px 1px 2px #000;
   text-shadow: 1px 1px 1px #000;
-}
+} */
 
 /***************************************************
 About Page
@@ -340,7 +490,8 @@ Events Page
   margin-bottom: 20px;
   color: white;
   text-shadow: 1px 1px 1px #000;
-  background-color: #11111188;
+  background-color: #111111aa;
+  box-shadow: 2px 2px 2px #000000;
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 0.5em;
@@ -353,6 +504,7 @@ Events Page
 a.venue-link {
   color: darkgoldenrod;
   font-size: 0.8em;
+  margin: 1.5em;
 }
 
 .event-date {
@@ -378,6 +530,7 @@ a.venue-link {
 
 .event-title {
   font-size: 1.5em;
+  margin: 0.5em;
 }
 
 .event-venue {
@@ -404,7 +557,8 @@ a.venue-link {
 Booking Page
 ***************************************************/
 
-#contact_info {
+#contact_info,
+#contact_section {
   background-color: white;
 }
 

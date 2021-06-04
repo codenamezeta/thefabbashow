@@ -85,6 +85,46 @@ const Nav = ({ logo, siteTitle, transparency }) => {
               Booking
             </a>
           </li>
+          <li className="nav-item">
+            <a
+              className="nav-link"
+              href="https://www.paypal.com/donate?business=R96WVXL2HA5TG&item_name=Thank+you%21+We+split+our+tips+between+all+6+fabulous+musicians%2C+Marie-Claire%2C+Julianne%2C+Andy%2C+Robert%2C+Michael+and+Gustavo.&currency_code=USD"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tips
+            </a>
+          </li>
+          {/* <li className="nav-item">
+            <form
+              action="https://www.paypal.com/donate"
+              method="post"
+              target="_top"
+            >
+              <input type="hidden" name="business" value="R96WVXL2HA5TG" />
+              <input
+                type="hidden"
+                name="item_name"
+                value="Thank you! We split our tips between all 6 fabulous musicians, Marie-Claire, Julianne, Andy, Robert, Michael and Gustavo."
+              />
+              <input type="hidden" name="currency_code" value="USD" />
+              <input
+                type="image"
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                border="0"
+                name="submit"
+                title="PayPal - The safer, easier way to pay online!"
+                alt="Donate with PayPal button"
+              />
+              <img
+                alt=""
+                border="0"
+                src="https://www.paypal.com/en_US/i/scr/pixel.gif"
+                width="1"
+                height="1"
+              />
+            </form>
+          </li> */}
           <li id="nav_open_item" onClick={() => setNavOpen(true)}>
             {/* <Icon name='bars' size='big' /> */}
             <FaBars size="2em" />
@@ -133,13 +173,35 @@ const Nav = ({ logo, siteTitle, transparency }) => {
               Booking
             </a>
           </li>
-          <li className="nav-item">
-            <a href="#!" className="side-nav-link">
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-instagram"></i>
-              <i className="fab fa-youtube"></i>
-              <i className="fab fa-twitter"></i>
-            </a>
+          <li id="paypal_button" className="nav-item">
+            <form
+              action="https://www.paypal.com/donate"
+              method="post"
+              target="_top"
+            >
+              <input type="hidden" name="business" value="R96WVXL2HA5TG" />
+              <input
+                type="hidden"
+                name="item_name"
+                value="Thank you! We split our tips between all 6 fabulous musicians, Marie-Claire, Julianne, Andy, Robert, Michael and Gustavo."
+              />
+              <input type="hidden" name="currency_code" value="USD" />
+              <input
+                type="image"
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                border="0"
+                name="submit"
+                title="PayPal - The safer, easier way to pay online!"
+                alt="Donate with PayPal button"
+              />
+              <img
+                alt=""
+                border="0"
+                src="https://www.paypal.com/en_US/i/scr/pixel.gif"
+                width="1"
+                height="1"
+              />
+            </form>
           </li>
         </ul>
       </nav>

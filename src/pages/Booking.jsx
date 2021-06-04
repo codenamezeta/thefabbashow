@@ -110,7 +110,7 @@ const Booking = () => {
         </div>
       </section>
       <FollowUs />
-      <main className="center-text">
+      <main className="center-text" id="contact_section">
         <div className="container" id="contact_info">
           <h1>Contact The FABBA Show</h1>
           <h3>The sensationally authentic tribute to ABBA.</h3>

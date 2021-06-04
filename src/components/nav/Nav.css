@@ -162,6 +162,11 @@ nav .material-icons {
   align-items: center;
   height: var(--navbar-height);
 }
+#paypal_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #side_sheet .side-nav-link {
   margin: 1px 0;
   transition: var(--transition);
@@ -208,7 +213,9 @@ nav .material-icons {
   #navbar ul li {
     padding: 0;
   }
-  #navbar a.nav-link {
+  /*@ .nav-item > form hides the paypal donate button, since it's not an <a> tag */
+  #navbar a.nav-link,
+  .nav-item > form {
     display: none;
   }
   #navbar #nav_open_item {
