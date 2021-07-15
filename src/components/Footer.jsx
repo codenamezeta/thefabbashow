@@ -2,7 +2,7 @@ const Footer = () => {
   //const year = new Date.getFullYear()
   return (
     <footer>
-      <form action="https://www.paypal.com/donate" method="post" target="_top">
+      {/* <form action="https://www.paypal.com/donate" method="post" target="_top">
         <input type="hidden" name="business" value="R96WVXL2HA5TG" />
         <input
           type="hidden"
@@ -25,7 +25,7 @@ const Footer = () => {
           width="1"
           height="1"
         />
-      </form>
+      </form> */}
       <p className="footer-text">
         Copyright &copy; {new Date().getFullYear()} The FABBA show.
       </p>

@@ -150,13 +150,16 @@ const Home = ({ promoVid }) => {
             </p>
           </div>
           <div className="btn-group">
-            <a
+            {/* <a
               href="https://www.paypal.com/donate?business=R96WVXL2HA5TG&item_name=Thank+you%21+We+split+our+tips+between+all+6+fabulous+musicians%2C+Marie-Claire%2C+Julianne%2C+Andy%2C+Robert%2C+Michael+and+Gustavo.&currency_code=USD"
               className="button button-outline"
               target="_blank"
               rel="noopener noreferrer"
             >
               Tips
+            </a> */}
+            <a href="/about" className="button button-outline">
+              Learn More
             </a>
             <a href="/events" className="button button-outline">
               Events

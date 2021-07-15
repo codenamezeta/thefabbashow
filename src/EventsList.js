@@ -1,23 +1,23 @@
 const EventsList = [
   {
-    _id: '004',
+    _id: '001',
     venue: {
-      name: 'The Canyon',
-      city: 'Agora Hills',
+      name: 'Pala',
+      city: 'Pala Casino',
       state: 'CA',
-      address: '28912 Roadside Dr.',
-      link: 'https://goo.gl/maps/XjAqDHzKPhvMp4WXA',
+      address: '11154 CA-76',
+      link: 'https://goo.gl/maps/FncqjgsQh8rPgUyW9',
     },
     date: {
-      month: 'JUN',
-      day: '04',
+      month: 'AUG',
+      day: '07',
       year: '2021',
     },
     ticketLink:
-      'https://wheremusicmeetsthesoul.com/events/abba-tribute-by-fabba-agoura-hills-2021/',
+      'https://www.palacasino.com/',
   },
   {
-    _id: '006',
+    _id: '002',
     venue: {
       name: 'The Canyon',
       city: 'Santa Clarita',
@@ -34,7 +34,7 @@ const EventsList = [
       'http://wheremusicmeetsthesoul.com/canyon-santa-clarita/events/',
   },
   {
-    _id: '007',
+    _id: '003',
     venue: {
       name: 'Lancaster Performing Arts Center',
       city: 'Lancaster',
