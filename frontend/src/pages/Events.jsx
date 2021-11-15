@@ -12,7 +12,7 @@ export default function Events() {
 
   useEffect(() => {
     const query = `
-  *[_type == 'event' && category == 'show'] | order(start) {
+  *[_type == 'event' && category == 'show' && start > now()] | order(start) {
       _id,
       name,
       summary,
