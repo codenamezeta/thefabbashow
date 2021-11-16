@@ -2,7 +2,7 @@
   "name": "thefabbashow",
   "private": true,
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)",
+  "description": "The fABBA Show is the greatest tribute to ABBA since ABBA.",
   "main": "package.json",
   "author": "Michael Zeta <michael@a2zeta.com>",
   "license": "MIT",
@@ -11,7 +11,15 @@
     "build": "sanity build"
   },
   "keywords": [
-    "sanity"
+    "sanity",
+    "The fABBA Show",
+    "fabba",
+    "show",
+    "ABBA",
+    "Michael",
+    "Zeta",
+    "codenamezeta",
+    "a2zeta"
   ],
   "dependencies": {
     "@sanity/base": "^2.21.6",
