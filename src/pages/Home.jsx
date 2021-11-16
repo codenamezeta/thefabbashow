@@ -91,54 +91,54 @@ const Home = ({ promoVid }) => {
   return (
     <>
       <Nav logo={logo} transparency />
-      <main id="fullscreen_section" onMouseMove={showHide}>
+      <main id='fullscreen_section' onMouseMove={showHide}>
         <video
           autoPlay
           muted
           loop
           // controls
-          poster="../imgs/fabba-03.jpg"
-          className="fullscreen-bg-video"
-          id="frontpage_video"
+          poster='../imgs/fabba-03.jpg'
+          className='fullscreen-bg-video'
+          id='frontpage_video'
           src={promoVid}
-          type="video/mp4"
+          type='video/mp4'
           ref={video}
           onTimeUpdate={seekTimeUpdate}
         >
           <source src={Video} />
         </video>
 
-        <div className="video-controls" ref={videoControls}>
-          <span id="play_pause_btn" onClick={playPause}>
+        <div className='video-controls' ref={videoControls}>
+          <span id='play_pause_btn' onClick={playPause}>
             {paused ? <FaPlay /> : <FaPause />}
           </span>
 
           <input
-            id="volume_slider"
+            id='volume_slider'
             ref={volumeSlider}
-            type="range"
-            min="0.0"
-            max="1.0"
-            defaultValue="0.33"
-            step="0.01"
+            type='range'
+            min='0.0'
+            max='1.0'
+            defaultValue='0.33'
+            step='0.01'
             onChange={adjustVolume}
           />
-          <span id="mute_btn" onClick={muteToggle}>
+          <span id='mute_btn' onClick={muteToggle}>
             {muted ? <FaVolumeMute /> : <FaVolumeUp />}
           </span>
           <input
-            id="seek_slider"
+            id='seek_slider'
             ref={seekSlider}
-            type="range"
-            min="0"
-            max="100"
-            defaultValue="0"
-            step="0.01"
+            type='range'
+            min='0'
+            max='100'
+            defaultValue='0'
+            step='0.01'
             onChange={seek}
           />
         </div>
-        <div className="over-video">
-          <div className="text-overlay">
+        <div className='over-video'>
+          <div className='text-overlay'>
             <p>
               The FABBA Show is America's most renowned, authentic, and truly
               sensational tribute to Abba. The legend lives on, with hit after
@@ -149,7 +149,7 @@ const Home = ({ promoVid }) => {
               cast, keeps fans coming back again and again.
             </p>
           </div>
-          <div className="btn-group">
+          <div className='btn-group'>
             {/* <a
               href="https://www.paypal.com/donate?business=R96WVXL2HA5TG&item_name=Thank+you%21+We+split+our+tips+between+all+6+fabulous+musicians%2C+Marie-Claire%2C+Julianne%2C+Andy%2C+Robert%2C+Michael+and+Gustavo.&currency_code=USD"
               className="button button-outline"
@@ -158,10 +158,10 @@ const Home = ({ promoVid }) => {
             >
               Tips
             </a> */}
-            <a href="/about" className="button button-outline">
+            <a href='/about' className='button button-outline'>
               Learn More
             </a>
-            <a href="/events" className="button button-outline">
+            <a href='/events' className='button button-outline'>
               Events
             </a>
           </div>
