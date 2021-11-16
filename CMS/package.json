@@ -22,19 +22,18 @@
     "a2zeta"
   ],
   "dependencies": {
-    "@sanity/base": "^2.21.6",
-    "@sanity/core": "^2.21.6",
-    "@sanity/default-layout": "^2.21.6",
-    "@sanity/default-login": "^2.21.6",
-    "@sanity/desk-tool": "^2.21.6",
-    "@sanity/google-maps-input": "^2.21.6",
-    "@sanity/vision": "^2.21.6",
+    "@sanity/base": "^2.21.10",
+    "@sanity/core": "^2.21.11",
+    "@sanity/default-layout": "^2.21.10",
+    "@sanity/default-login": "^2.21.10",
+    "@sanity/desk-tool": "^2.21.10",
+    "@sanity/google-maps-input": "^2.21.10",
+    "@sanity/vision": "^2.21.10",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/codenamezeta/thefabbashow.git"
