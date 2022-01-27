@@ -1,0 +1,41 @@
+{
+  "name": "thefabbashow",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The fABBA Show is the greatest tribute to ABBA since ABBA.",
+  "main": "package.json",
+  "author": "Michael Zeta <michael@a2zeta.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity",
+    "The fABBA Show",
+    "fabba",
+    "show",
+    "ABBA",
+    "Michael",
+    "Zeta",
+    "codenamezeta",
+    "a2zeta"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.25.1",
+    "@sanity/core": "^2.25.0",
+    "@sanity/default-layout": "^2.25.1",
+    "@sanity/default-login": "^2.24.1",
+    "@sanity/desk-tool": "^2.25.3",
+    "@sanity/google-maps-input": "^2.25.1",
+    "@sanity/vision": "^2.25.1",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "styled-components": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codenamezeta/thefabbashow.git"
+  }
+}

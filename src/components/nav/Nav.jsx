@@ -58,84 +58,102 @@ const Nav = ({ logo, siteTitle, transparency }) => {
   return (
     <>
       {/* <nav id="navbar" style={transparent ? transparencyStyles : null}> */}
-      <nav id="navbar" className={transparent ? 'transparent-navbar' : null}>
+      <nav id='navbar' className={transparent ? 'transparent-navbar' : null}>
         <ul>
-          <li id="navbar_brand">
-            <a href="/" className="site-name nav-item" id="site-name">
-              {logo ? <img src={logo} alt="logo" /> : { siteTitle }}
+          <li id='navbar_brand'>
+            <a href='/' className='site-name nav-item' id='site-name'>
+              {logo ? <img src={logo} alt='logo' /> : { siteTitle }}
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">
+          <li className='nav-item'>
+            <a className='nav-link' href='/'>
               Home
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/about">
+          <li className='nav-item'>
+            <a className='nav-link' href='/about'>
               About
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/events">
+          <li className='nav-item'>
+            <a className='nav-link' href='/events'>
               Events
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/booking">
+          <li className='nav-item'>
+            <a className='nav-link' href='/booking'>
               Booking
             </a>
           </li>
-          
-          
-          <li id="nav_open_item" onClick={() => setNavOpen(true)}>
+          <li className='nav-item'>
+            <a
+              className='nav-link'
+              href='https://la-jolla-booking-agency.square.site/the-fabba-show'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Merch
+            </a>
+          </li>
+
+          <li id='nav_open_item' onClick={() => setNavOpen(true)}>
             {/* <Icon name='bars' size='big' /> */}
-            <FaBars size="2em" />
+            <FaBars size='2em' />
           </li>
         </ul>
       </nav>
 
       <div
-        id="click_blocker"
+        id='click_blocker'
         className={clickBlockerClass}
         onClick={() => setNavOpen(false)}
       ></div>
       {/* <!-- Mobile Navigation --> */}
-      <nav id="side_sheet" className={sideSheetClasses}>
+      <nav id='side_sheet' className={sideSheetClasses}>
         <ul>
           <li
-            id="nav_close_item"
-            className="nav-item"
+            id='nav_close_item'
+            className='nav-item'
             onClick={() => setNavOpen(false)}
           >
             {/* <Icon name='close' size='big' /> */}
-            <FaTimes size="1.5em" style={{ marginLeft: 'auto' }} />
+            <FaTimes size='1.5em' style={{ marginLeft: 'auto' }} />
           </li>
-          <li className="nav-item">
-            <a id="side_nav_brand" className="" href="/">
-              {logo ? <img src={logo} alt="logo" /> : { siteTitle }}
+          <li className='nav-item'>
+            <a id='side_nav_brand' className='' href='/'>
+              {logo ? <img src={logo} alt='logo' /> : { siteTitle }}
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/" className="side-nav-link">
+          <li className='nav-item'>
+            <a href='/' className='side-nav-link'>
               Home
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/about" className="side-nav-link">
+          <li className='nav-item'>
+            <a href='/about' className='side-nav-link'>
               About
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/events" className="side-nav-link">
+          <li className='nav-item'>
+            <a href='/events' className='side-nav-link'>
               Events
             </a>
           </li>
-          <li className="nav-item">
-            <a href="/booking" className="side-nav-link">
+          <li className='nav-item'>
+            <a href='/booking' className='side-nav-link'>
               Booking
             </a>
           </li>
-          
+          <li className='nav-item'>
+            <a
+              className='side-nav-link'
+              href='https://la-jolla-booking-agency.square.site/the-fabba-show'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Merch
+            </a>
+          </li>
         </ul>
       </nav>
     </>
