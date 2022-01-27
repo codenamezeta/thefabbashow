@@ -1,0 +1,121 @@
+<%- include("head") -%>
+
+  <body id="homepage_body">
+    <div id="click-blocker"></div>
+    <!-- To make navbar transparent, add "transparent-navbar" to the nav elements class list and enable CSS styles for .transparent-navbar and .nav-color -->
+    <nav class="navbar transparent-navbar">
+      <a href="/" class="site-name nav-item" id="site-name"
+        ><img
+          src="imgs/logo-01.png"
+          alt="The fABBA Show Logo"
+          style="max-height: 120px; max-width: 120px;"
+      /></a>
+
+      <ul class="main-nav">
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/events" class="nav-link">Events</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link">Contact</a>
+        </li>
+      </ul>
+      <div class="nav-item" id="nav-toggle-item">
+        <a class="nav-link" onclick="navToggle()">
+          <i class="fas fa-bars"></i>
+        </a>
+      </div>
+    </nav>
+    <!-- Mobile Navigation -->
+    <nav class="side-sheet" id="side-nav">
+      <ul class="side-nav">
+        <li id="side-nav-close-item">
+          <i class="fas fa-times" id="side-nav-close-icon"></i>
+        </li>
+        <li class="nav-item">
+          <p id="site-name-side-sheet">The FABBA Show</p>
+        </li>
+        <li class="nav-item">
+          <a href="/" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="/events" class="nav-link">Events</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <div class="nav-link">
+            <a href="https://www.facebook.com/theFABBAshow" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/thefabbashow/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/channel/UCNDXZGcI28PSC-Mft7Es3Vw"
+              target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="fullscreen_section">
+      <!-- <img src="https://source.unsplash.com/1200x800?abba" /> -->
+
+      <div class="fullscreen-bg">
+        <video
+          autoplay
+          muted
+          loop
+          poster="imgs/old-abba-1.jpg"
+          class="fullscreen-bg-video"
+          id="frontpage_video"
+        >
+          <source src="vids/promo.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="flex">
+        <div class="text-overlay">
+          <p>
+            The FABBA Show is America's most renowned, authentic, and truly
+            sensational tribute to Abba. The legend lives on, with hit after hit
+            of dance floor classics such as Dancing Queen, Take A Chance On Me,
+            Super Trouper, SOS, Mamma Mia, and over 40 other hit singles. The
+            setlist is packed with hits that will have on your feet
+            disco-dancing with the band. The costumes are spectacular, and the
+            energy and showmanship brought by the nationally-acclaimed cast,
+            keeps fans coming back again and again.
+          </p>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a href="/about" class="button button-outline">
+          <!-- <i class="fas fa-play"></i> -->
+          Learn More
+        </a>
+        <a href="/events" class="button button-outline">Tickets</a>
+        <i
+          class="hide-on-mobile fas fa-volume-up"
+          id="play_button"
+          onclick="toggleMute()"
+        ></i>
+      </div>
+
+      <!-- /.home-page-content -->
+    </main>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
+</html>
