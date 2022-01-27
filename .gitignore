@@ -8,6 +8,9 @@ node_modules
 =======
 /node_modules
 /CMS/node_modules
+<<<<<<< HEAD
+>>>>>>> bf1ae12d05d955f5066d7a1a98a16e93d9498373
+=======
 >>>>>>> bf1ae12d05d955f5066d7a1a98a16e93d9498373
 /.pnp
 .pnp.js
