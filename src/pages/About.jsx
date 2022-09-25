@@ -2,7 +2,8 @@ import FollowUs from '../components/FollowUs'
 import big_bear_26 from '../imgs/big-bear/big_bear_26.jpg'
 import big_bear_banner from '../imgs/big-bear/big_bear_banner.jpg'
 import logo from '../imgs/logo-01.png'
-import fabba_08 from '../imgs/fabba-08.jpg'
+// import fabba_08 from '../imgs/fabba-08.jpg'
+import stage13 from '../imgs/stage/image13.jpeg'
 import juliesPhoto from '../imgs/Bio Images/Julie Ruck 2.jpg'
 import mcsPhoto from '../imgs/Bio Images/Marie-Claire Marshall.jpg'
 import andysPhoto from '../imgs/Bio Images/Andy 1.jpg'
@@ -36,27 +37,29 @@ const About = () => {
           {/* <!-- <h1 className="center-text">The FABBA Show</h1> --> */}
           <div className='center-text hobo' id='band_bio'>
             <h2 className='center-text'>
-              The sensationally authentic tribute to ABBA.
+              The sensationally authentic tribute to ABBA
             </h2>
-            Direct from the U.K. and back by popular demand, The FABBA Show is
-            now America's most renowned, authentic, and truly sensational
-            tribute to ABBA. "The World's top ABBA tribute show," said the
-            London Times and "Even better than the originals live," claimed the
-            Houston Chronicle. The setlist is packed with all your favorite
-            hits, and the costumes are simply spectacular. The energy and
-            showmanship brought by this superb cast has fans from all over the
-            world returning time after time for more of The FABBA Show.
+            You can dance and jive and have the time i of your life!  The FABBA
+            Show is the World class homage to 70s pop sensation ABBA. Featuring
+             a high energy, full of fun, and internationally acclaimed cast they
+            will take you on a glittery sparkling and truly magical journey back
+            to the disco and the 70s. The FABBA Show are famous for their flashy
+            stage production, extravagant costumes, exciting choreography and
+            inate ability to drive an audience wild.  Audiences will be dancing
+            in the aisles and singing at the top of their voices, The FABBA Show
+            doesn't just plan to give you a night out to remember, they want to
+            change your lives!
           </div>
         </div>
         {/* <!-- /.container --> */}
         <img
-          src={fabba_08}
+          src={stage13}
           alt='The Members of fABBA'
           className='full-width-img'
           style={{ marginBottom: '-5px' }}
         />
         <FollowUs />
-        <h2 id='meet_the_band'>Meet The Band</h2>
+        <h2 id='meet_the_band'>Meet The Group</h2>
         <div className='bios grid'>
           <div className='bio flex' id='julie_bio'>
             <img className='bio-pic' src={juliesPhoto} alt='Julie Ruck' />
