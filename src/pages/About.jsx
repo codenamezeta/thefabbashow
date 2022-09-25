@@ -7,6 +7,8 @@ import juliesPhoto from '../imgs/Bio Images/Julie Ruck 2.jpg'
 import mcsPhoto from '../imgs/Bio Images/Marie-Claire Marshall.jpg'
 import andysPhoto from '../imgs/Bio Images/Andy 1.jpg'
 import larsPhoto from '../imgs/Bio Images/Lars 1.jpeg'
+import levisPhoto from '../imgs/Bio Images/Levi 1.jpeg'
+import kariesPhoto from '../imgs/Bio Images/Karie 1.jpeg'
 import michaelsPhoto from '../imgs/Bio Images/Michael Zeta 1.jpg'
 import gustavosPhoto from '../imgs/Bio Images/Gustavo 1.jpg'
 import Footer from '../components/Footer'
@@ -124,20 +126,6 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className='bio flex' id='michael_bio'>
-            <img className='bio-pic' src={michaelsPhoto} alt='Michael Zeta' />
-            <div className='bio-text'>
-              <h3>Michael Zeta</h3>
-              <h5>As Rutger Gunnarsson</h5>
-              <p>
-                Michael is a multi-instrumentalist and has been performing since
-                the age of 12. When he's not disco dancing with The FABBA Show,
-                he can be found in the studio recording with his original band,
-                The Second Messenger or teaching the next generation of
-                musicians at Rockstars of Tomorrow how to rock the stage.
-              </p>
-            </div>
-          </div>
           <div className='bio flex' id='gustavo_bio'>
             <img className='bio-pic' src={gustavosPhoto} alt='Gustavo Peraza' />
             <div className='bio-text'>
@@ -150,6 +138,63 @@ const About = () => {
                 playing with The FABBA Show. Remaining faithful to the original
                 songs and adding that extra live excitement, he energizes the
                 band and gets the audience out of their seats!
+              </p>
+            </div>
+          </div>
+          <div className='bio flex' id='levi_bio'>
+            <img className='bio-pic' src={levisPhoto} alt='Levi Petree' />
+            <div className='bio-text'>
+              <h3>Levi Petree</h3>
+              <h5>Alternate</h5>
+              <p>
+                Levi Petree is an actor and songwriter who has performed on
+                stages all across the U.S. Favorite credits include ‘The
+                Incredibly Famous Willy Rivers’ (SiNNERMAN Ensemble - Chicago)
+                ‘Afterloves’ (Bard’s Theatre - Louisville) and ‘The Foreigner’
+                (Lagniappe Theatre - Louisiana). He was recently seen as Cpt.
+                William Clark on INSP’s ‘Into the Wild Frontier’ and was the
+                voice of the diabolical arsonist on the award-nominated podcast
+                ‘Firebug’. His music can be found on all streaming platforms.
+              </p>
+            </div>
+          </div>
+          <div className='bio flex' id='levi_bio'>
+            <img className='bio-pic' src={kariesPhoto} alt='Karie Seasock' />
+            <div className='bio-text'>
+              <h3>Karie Seasock</h3>
+              <h5>Alternate</h5>
+              <p>
+                Karie is thrilled to be portraying Agnetha in The ABBA Show! She
+                is a regular guest star in the phenomenal musical theater shows
+                at Disneyland Resort and Knott's Berry Farm in California and
+                she appears in Disney Channel’s ‘Suite Life on Deck’. Karie
+                starred in the famous Radio City Christmas Spectacular for 6
+                years and loved every second of it. When not performing, she
+                teaches dance and choreographs for California show choirs. Karie
+                holds a BA in Drama from the University of California, Irvine.
+                Now, GIMMIE! GIMMIE! GIMMIE! some ABBA!
+              </p>
+            </div>
+          </div>
+          <div className='bio flex' id='michael_bio'>
+            <img className='bio-pic' src={michaelsPhoto} alt='Michael Zeta' />
+            <div className='bio-text'>
+              <h3>Michael Zeta</h3>
+              <h5>Alternate</h5>
+              <p>
+                Michael is a multi-instrumentalist and has been performing since
+                the age of 12. When he's not disco dancing with The FABBA Show,
+                he can be found in the studio recording with his original band,{' '}
+                <a
+                  style={{ color: '#000', textDecoration: 'none' }}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://thesecondmessenger.com'
+                >
+                  The Second Messenger
+                </a>{' '}
+                or teaching the next generation of musicians at Rockstars of
+                Tomorrow how to rock the stage.
               </p>
             </div>
           </div>
