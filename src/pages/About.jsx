@@ -6,7 +6,7 @@ import fabba_08 from '../imgs/fabba-08.jpg'
 import juliesPhoto from '../imgs/Bio Images/Julie Ruck 2.jpg'
 import mcsPhoto from '../imgs/Bio Images/Marie-Claire Marshall.jpg'
 import andysPhoto from '../imgs/Bio Images/Andy 1.jpg'
-import robertsPhoto from '../imgs/Bio Images/Robert 1.jpg'
+import larsPhoto from '../imgs/Bio Images/Lars 1.jpeg'
 import michaelsPhoto from '../imgs/Bio Images/Michael Zeta 1.jpg'
 import gustavosPhoto from '../imgs/Bio Images/Gustavo 1.jpg'
 import Footer from '../components/Footer'
@@ -20,20 +20,20 @@ const About = () => {
         <header>
           <img
             src={big_bear_26}
-            alt="The Members of fABBA"
-            className="full-width-img show-on-mobile"
+            alt='The Members of fABBA'
+            className='full-width-img show-on-mobile'
           />
           <img
             src={big_bear_banner}
-            alt="The Members of fABBA"
-            className="full-width-img hide-on-mobile"
+            alt='The Members of fABBA'
+            className='full-width-img hide-on-mobile'
           />
-          <img src={logo} alt="Logo" id="abba_page_logo_display" />
+          <img src={logo} alt='Logo' id='abba_page_logo_display' />
         </header>
-        <div className="container">
+        <div className='container'>
           {/* <!-- <h1 className="center-text">The FABBA Show</h1> --> */}
-          <div className="center-text hobo" id="band_bio">
-            <h2 className="center-text">
+          <div className='center-text hobo' id='band_bio'>
+            <h2 className='center-text'>
               The sensationally authentic tribute to ABBA.
             </h2>
             Direct from the U.K. and back by popular demand, The FABBA Show is
@@ -49,16 +49,16 @@ const About = () => {
         {/* <!-- /.container --> */}
         <img
           src={fabba_08}
-          alt="The Members of fABBA"
-          className="full-width-img"
+          alt='The Members of fABBA'
+          className='full-width-img'
           style={{ marginBottom: '-5px' }}
         />
         <FollowUs />
-        <h2 id="meet_the_band">Meet The Band</h2>
-        <div className="bios grid">
-          <div className="bio flex" id="julie_bio">
-            <img className="bio-pic" src={juliesPhoto} alt="Julie Ruck" />
-            <div className="bio-text">
+        <h2 id='meet_the_band'>Meet The Band</h2>
+        <div className='bios grid'>
+          <div className='bio flex' id='julie_bio'>
+            <img className='bio-pic' src={juliesPhoto} alt='Julie Ruck' />
+            <div className='bio-text'>
               <h3>Julianne Ruck</h3>
               <h5>As Agnetha Fältskog</h5>
               <p>
@@ -72,13 +72,13 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="bio flex" id="mc">
+          <div className='bio flex' id='mc'>
             <img
-              className="bio-pic"
+              className='bio-pic'
               src={mcsPhoto}
-              alt="Marie-Claire Marshall"
+              alt='Marie-Claire Marshall'
             />
-            <div className="bio-text">
+            <div className='bio-text'>
               <h3>Marie-Claire Marshall</h3>
               <h5>As Anni-Frid Lyngstad</h5>
               <p>
@@ -91,30 +91,29 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="bio flex" id="robert_bio">
-            <img className="bio-pic" src={robertsPhoto} alt="Robert Gonzalez" />
-            <div className="bio-text">
-              <h3>Robert Gonzalez</h3>
+          <div className='bio flex' id='lars_bio'>
+            <img className='bio-pic' src={larsPhoto} alt='Lars Midthun' />
+            <div className='bio-text'>
+              <h3>Lars Midthun</h3>
               <h5>As Benny Andersson</h5>
               <p>
-                Robert's credits include lead guitar in Funhouse and The PAC
-                Men. Album releases include These Are The Days by Actual Size.
-                He wrote and produced the song Julianne which, of course, is our
-                own Julianne's favorite song. Robert is the owner and director
-                of two of SoCal's top music schools called{' '}
-                <a
-                  href="http://rockstarslaverne.com"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Rockstars of Tomorrow.
-                </a>
+                Hailing from Scandinavia via Minnesota, Lars is living in Los
+                Angeles pursuing the Art of LOLs and Giggles,( and if he’s
+                honest Frisbee Golf). He is actively traveling his road to fame
+                and fortune in LA appearing in plays, shows, and films. He
+                recently played Kevin Bacon’s role in Footloose in the theater
+                in Hollywood. As well as being a singer, an actor and a dancer,
+                he is a stand up comedian and he produces an abundance of his
+                own comedy projects ( does he really have time for Frisbee
+                Golf)? He is SO excited to be touring the US playing Benny in
+                The FABBA Show! You can find his online presence and sketch
+                comedy just by searching: 'Lars on Mars'!
               </p>
             </div>
           </div>
-          <div className="bio flex" id="andy_bio">
-            <img className="bio-pic" src={andysPhoto} alt="Andy Marshall" />
-            <div className="bio-text">
+          <div className='bio flex' id='andy_bio'>
+            <img className='bio-pic' src={andysPhoto} alt='Andy Marshall' />
+            <div className='bio-text'>
               <h3>Andy Marshall</h3>
               <h5>As Björn Ulvaeus</h5>
               <p>
@@ -125,9 +124,9 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="bio flex" id="michael_bio">
-            <img className="bio-pic" src={michaelsPhoto} alt="Michael Zeta" />
-            <div className="bio-text">
+          <div className='bio flex' id='michael_bio'>
+            <img className='bio-pic' src={michaelsPhoto} alt='Michael Zeta' />
+            <div className='bio-text'>
               <h3>Michael Zeta</h3>
               <h5>As Rutger Gunnarsson</h5>
               <p>
@@ -139,9 +138,9 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="bio flex" id="gustavo_bio">
-            <img className="bio-pic" src={gustavosPhoto} alt="Gustavo Peraza" />
-            <div className="bio-text">
+          <div className='bio flex' id='gustavo_bio'>
+            <img className='bio-pic' src={gustavosPhoto} alt='Gustavo Peraza' />
+            <div className='bio-text'>
               <h3>Gustavo Peraza</h3>
               <h5>As Ola Brunkert</h5>
               <p>
