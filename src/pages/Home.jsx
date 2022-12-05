@@ -1,6 +1,6 @@
 import Video from '../vids/promo.mp4'
 import Nav from '../components/nav/Nav'
-import logo from '../imgs/logo-01.png'
+import logo from '../imgs/logo.png'
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa'
 import { useRef, useState, useEffect } from 'react'
 

@@ -86,6 +86,11 @@ const Nav = ({ logo, siteTitle, transparency }) => {
             </a>
           </li>
           <li className='nav-item'>
+            <a className='nav-link' href='/gallery'>
+              Gallery
+            </a>
+          </li>
+          <li className='nav-item'>
             <a
               className='nav-link'
               href='https://la-jolla-booking-agency.square.site/the-fabba-show'
@@ -142,6 +147,11 @@ const Nav = ({ logo, siteTitle, transparency }) => {
           <li className='nav-item'>
             <a href='/booking' className='side-nav-link'>
               Booking
+            </a>
+          </li>
+          <li className='nav-item'>
+            <a href='/gallery' className='side-nav-link'>
+              Gallery
             </a>
           </li>
           <li className='nav-item'>

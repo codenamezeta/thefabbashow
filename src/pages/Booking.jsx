@@ -1,28 +1,43 @@
 import FollowUs from '../components/FollowUs'
 import banner2 from '../imgs/fabba-banner-02.jpg'
 import banner1 from '../imgs/fabba-banner-01.jpg'
-// import tourinfo from '../imgs/tourinfo.jpg'
-// import optionA from '../imgs/optionA.jpg'
-// import optionB from '../imgs/optionB.jpg'
 import Footer from '../components/Footer'
 import Nav from '../components/nav/Nav'
-import logo from '../imgs/logo-01.png'
+import logo from '../imgs/logo.png'
 
 const Booking = () => {
   return (
     <>
       <Nav logo={logo} transparency />
-      <img src={banner2} className="full-width-img" alt="fabba-banner-02" />
-      <h5 className="center-text" id="now_booking">
+      <img src={banner2} className='full-width-img' alt='fabba-banner-02' />
+
+      <main className='center-text' id='contact_section'>
+        <div className='container' id='contact_info'>
+          <h1>Contact The FABBA Show</h1>
+          <h3>The sensationally authentic tribute to ABBA.</h3>
+          <p className='contact'>
+            <a
+              href='mailto:info@thefabbashow.com'
+              className='button'
+              style={{ width: 'initial' }}
+            >
+              For booking, tour info, and more, contact info@thefabbashow.com
+            </a>
+          </p>
+        </div>
+        <img src={banner1} className='full-width-img' alt='fabba-banner-01' />
+      </main>
+      <FollowUs />
+      <h5 className='center-text' id='now_booking'>
         NOW BOOKING
       </h5>
-      <section className="virtual-tour-info container">
-        <h2 className="span-all-cols">The ABBA–Solutely Virtual Tour!</h2>
-        <h3 className="span-all-cols">
+      <section className='virtual-tour-info container'>
+        <h2 className='span-all-cols'>The ABBA–Solutely Virtual Tour!</h2>
+        <h3 className='span-all-cols'>
           Drive new profit and sponsor support to your venue with no risk and no
           cap.
         </h3>
-        <p className="span-all-cols">
+        <p className='span-all-cols'>
           Virtual events will be the most profitable avenue for venues in 2021,
           and our purpose-built model empowers you to attract sponsors. The
           fABBA Show, one of the most successful touring tribute productions
@@ -30,7 +45,7 @@ const Booking = () => {
           venue to deliver two high-quality, interactive shows to patrons with
           unlimited capacity!
         </p>
-        <div className="option">
+        <div className='option'>
           <h4>Option A</h4>
           <p>
             You sell tickets, and you stream our show from your website, and we
@@ -54,15 +69,15 @@ const Booking = () => {
             </li>
           </ul>
           <a
-            href="https://files.constantcontact.com/262626d6401/5fcb2657-ce18-4cc3-916e-35f9350c829b.pdf"
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://files.constantcontact.com/262626d6401/5fcb2657-ce18-4cc3-916e-35f9350c829b.pdf'
+            className='button'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Learn More
           </a>
         </div>
-        <div className="option">
+        <div className='option'>
           <h4>Option B</h4>
           <p>
             Stellar Tickets will sell tickets and stream show at a 42.55% /
@@ -100,28 +115,16 @@ const Booking = () => {
             </li>
           </ul>
           <a
-            href="https://files.constantcontact.com/262626d6401/35c297a9-9f7f-4deb-bd78-00aa94b04b45.pdf"
-            className="button"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://files.constantcontact.com/262626d6401/35c297a9-9f7f-4deb-bd78-00aa94b04b45.pdf'
+            className='button'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Learn More
           </a>
         </div>
       </section>
-      <FollowUs />
-      <main className="center-text" id="contact_section">
-        <div className="container" id="contact_info">
-          <h1>Contact The FABBA Show</h1>
-          <h3>The sensationally authentic tribute to ABBA.</h3>
-          <p className="contact">
-            <a href="mailto:info@thefabbashow.com">
-              For booking, tour info, and more, contact info@thefabbashow.com
-            </a>
-          </p>
-        </div>
-        <img src={banner1} className="full-width-img" alt="fabba-banner-01" />
-      </main>
+
       <Footer />
     </>
   )

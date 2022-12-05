@@ -22,16 +22,17 @@
     "a2zeta"
   ],
   "dependencies": {
-    "@sanity/base": "^2.25.1",
-    "@sanity/core": "^2.25.0",
-    "@sanity/default-layout": "^2.25.1",
-    "@sanity/default-login": "^2.24.1",
-    "@sanity/desk-tool": "^2.25.3",
-    "@sanity/google-maps-input": "^2.25.1",
-    "@sanity/vision": "^2.25.1",
+    "@sanity/base": "^2.35.2",
+    "@sanity/core": "^2.35.0",
+    "@sanity/default-layout": "^2.35.2",
+    "@sanity/default-login": "^2.35.2",
+    "@sanity/desk-tool": "^2.35.2",
+    "@sanity/google-maps-input": "^2.36.0",
+    "@sanity/vision": "^2.35.2",
     "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
+    "sanity-plugin-media": "^1.4.13",
     "styled-components": "^5.2.0"
   },
   "repository": {

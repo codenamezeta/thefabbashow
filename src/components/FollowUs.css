@@ -4,34 +4,47 @@
   color: ivory;
   display: flex;
   flex-wrap: wrap;
-  padding: 2% 0;
+  /* padding: 1em; */
   transition: 0.25s ease;
+}
+
+.follow-us-banner h2 {
+  font-size: clamp(1em ,2em, 3em);
 }
 
 .icons-wrapper {
   display: flex;
-  margin: 4% auto;
-  width: 75%;
-  justify-content: space-between;
+  margin: 0em auto;
+  /* width: clamp(48px 50% 100%); */
+  /* justify-content: space-between; */
   flex-wrap: wrap;
 }
 
 .follow-us-banner > h2 {
+  display: block;
   color: ivory;
+  font-size: clamp(1em ,2em, 3em);
+  margin: 1em auto;
   width: 100%;
   text-align: center;
 }
 
-.social-link {
+.social-link { /* The <a> tag that wraps the icon component itself. */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0em 1em 2em;
   /* color: azure; */
+  text-decoration: none;
 }
 
 .social-link *,
 .social-link *:visited {
   color: azure;
+}
+
+.social-link span {
+  margin-top: 0.5em;
 }
 
 .handle {

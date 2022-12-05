@@ -1,7 +1,7 @@
 import Event from '../components/Event'
 import Footer from '../components/Footer'
 import Nav from '../components/nav/Nav'
-import logo from '../imgs/logo-01.png'
+import logo from '../imgs/logo.png'
 import { useEffect, useState } from 'react'
 // import EventsList from '../EventsList.js'
 
@@ -42,9 +42,10 @@ export default function Events() {
         {/* {events.map((event) => {
           return <span>{event.name}</span>
         })} */}
-        <div className="events-bg container">
+        <div className='events-bg container'>
           <h1>Upcoming Events</h1>
-          <div className="container" id="events_list">
+
+          <div className='container' id='events_list'>
             {events.map((event) => (
               <Event
                 key={event._id}
