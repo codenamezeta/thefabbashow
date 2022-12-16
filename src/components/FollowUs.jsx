@@ -37,7 +37,7 @@ const FollowUs = () => {
           {/* <span className='handle'>@thefabbashow</span> */}
         </a>
         <a
-          href='https://www.tiktok.com/@fabbashow'
+          href='https://www.youtube.com/@thefabbashow'
           className='social-link'
           target='_blank'
           rel='noopener noreferrer'
