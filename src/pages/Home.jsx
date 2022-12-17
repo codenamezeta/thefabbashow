@@ -1,4 +1,4 @@
-import Video from '../vids/promo.mp4'
+import Video from '../vids/The-Fabba-Show-Promo.mp4'
 import Nav from '../components/nav/Nav'
 import logo from '../imgs/logo.png'
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa'
