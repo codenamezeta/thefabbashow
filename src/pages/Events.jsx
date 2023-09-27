@@ -48,7 +48,7 @@ export default function Events() {
         setEvents(data)
       })
       .catch(console.error)
-  }, [])
+  }, [today])
 
   return (
     <>
