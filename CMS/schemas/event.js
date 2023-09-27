@@ -34,7 +34,7 @@ export default {
     {
       name: 'end',
       title: 'End date',
-      type: 'datetime',
+      type: 'date',
     },
     {
       name: 'url',

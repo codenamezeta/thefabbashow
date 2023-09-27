@@ -19,7 +19,7 @@ const Home = ({ promoVid }) => {
   const videoControls = useRef()
   //@useEffect sets the video's volume to 1/3rd instead of 100% incase users decide to hit the unmute button before adjusting volume slider
   useEffect(() => {
-    video.current.volume = 0.33
+    video.current.volume = 0
     showHide()
   })
 
@@ -63,9 +63,11 @@ const Home = ({ promoVid }) => {
     if (volumeSlider.current.value > 0) {
       video.current.muted = false
       setMuted(false)
+      showHide()
     } else {
       video.current.muted = true
       setMuted(true)
+      showHide()
     }
   }
 
@@ -81,7 +83,7 @@ const Home = ({ promoVid }) => {
 
   const showHide = () => {
     videoControls.current.classList.remove('hide-video-controls')
-    if (!paused) {
+    if (!paused && !muted) {
       setTimeout(() => {
         videoControls.current.classList.add('hide-video-controls')
       }, 4500)
@@ -119,7 +121,7 @@ const Home = ({ promoVid }) => {
             type='range'
             min='0.0'
             max='1.0'
-            defaultValue='0.33'
+            defaultValue='0'
             step='0.01'
             onChange={adjustVolume}
           />

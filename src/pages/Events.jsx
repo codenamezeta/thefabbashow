@@ -4,15 +4,30 @@ import Nav from '../components/nav/Nav'
 import logo from '../imgs/logo.png'
 import { useEffect, useState } from 'react'
 // import EventsList from '../EventsList.js'
-
 import client from '../client'
 
 export default function Events() {
   const [events, setEvents] = useState([])
 
+  function getToday() {
+    // Get today's date.
+    const today = new Date()
+
+    // Convert the month index to a string.
+    const monthString = String(today.getMonth() + 1)
+
+    // Pad the month string with a leading zero if it is less than 10.
+    const formattedMonth = monthString.padStart(2, '0')
+
+    // Return today's date in the format yyyy-mm-dd.
+    return `${today.getFullYear()}-${formattedMonth}-${today.getDate()}`
+  }
+
+  const today = getToday()
+
   useEffect(() => {
     const query = `
-  *[_type == 'event' && category == 'show' && start > now()] | order(start) {
+    *[_type == 'event' && category == 'show' && start >= '${today}'] | order(start) {
       _id,
       name,
       summary,
@@ -26,7 +41,7 @@ export default function Events() {
       venue->,
       slug
     }
-  `
+    `
     client
       .fetch(query)
       .then((data) => {

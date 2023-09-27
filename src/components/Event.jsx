@@ -10,10 +10,11 @@ const Event = ({
   description,
   url,
 }) => {
-  //// const eventMonth = date.slice(5, 7) //? Gets the month number from ISO date
-  //- Passes in the ISO date from Sanity to determine the month number.
-  //? .replace(/-/g, '\/') is needed to solve the one day off issue from dates that fall on the first after a month with only 30 days (e.g. October 1st would show incorrectly as September 31st.)
-  //@ https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
+  // //// const eventMonth = date.slice(5, 7) //? Gets the month number from ISO date
+  // //- Passes in the ISO date from Sanity to determine the month number.
+  // //? .replace(/-/g, '\/') is needed to solve the one day off issue from dates that fall on the first after a month with only 30 days (e.g. October 1st would show incorrectly as September 31st.)
+  // //@ https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
+
   const eventDayNum = new Date(date.replace(/-/g, '/')).getDate()
   const eventMonth = new Date(date.replace(/-/g, '/')).toLocaleString(
     'default',
