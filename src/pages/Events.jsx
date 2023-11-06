@@ -14,16 +14,17 @@ export default function Events() {
     const today = new Date()
 
     // Convert the month index to a string.
-    const monthString = String(today.getMonth() + 1)
+    const monthString = String(today.getMonth() + 1).padStart(2, '0')
 
-    // Pad the month string with a leading zero if it is less than 10.
-    const formattedMonth = monthString.padStart(2, '0')
+    // Convert the day to a string.
+    const dayString = String(today.getDate()).padStart(2, '0')
 
     // Return today's date in the format yyyy-mm-dd.
-    return `${today.getFullYear()}-${formattedMonth}-${today.getDate()}`
+    return `${today.getFullYear()}-${monthString}-${dayString}`
   }
 
   const today = getToday()
+  console.log('🚀 ~ file: Events.jsx:27 ~ Events ~ today:', today)
 
   useEffect(() => {
     const query = `
@@ -45,6 +46,7 @@ export default function Events() {
     client
       .fetch(query)
       .then((data) => {
+        console.log('🚀 ~ file: Events.jsx:48 ~ .then ~ data:', data)
         setEvents(data)
       })
       .catch(console.error)
