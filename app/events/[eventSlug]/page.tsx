@@ -57,7 +57,7 @@ function composeEventTitles(event: EventType): {
   }
 }
 
-export default async function eventPage({
+export default async function Page({
   params,
 }: {
   params: { eventSlug: string }

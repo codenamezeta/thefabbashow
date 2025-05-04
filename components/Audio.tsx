@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AudioPlayer from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 import styles from './Audio.module.css'
@@ -12,11 +12,29 @@ type AudioTrack = {
 type Playlist = AudioTrack[]
 
 // Get audio tracks from Sanity
-const playlist: Playlist = await getAudioTracks()
-console.log('playlist:', playlist)
+// const playlist: Playlist = await getAudioTracks()
+// console.log('playlist:', playlist)
 
 export default function PlayAudio(): React.ReactElement {
+  const [playlist, setPlaylist] = useState<Playlist>([])
   const [currentTrack, setTrackIndex] = useState(0)
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadTracks() {
+      try {
+        const tracks = await getAudioTracks()
+        setPlaylist(tracks)
+        console.log('playlist:', tracks)
+      } catch (error) {
+        console.error('Failed to load audio tracks:', error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadTracks()
+  }, [])
 
   const handleClickPrev = () => {
     console.log('Prev')
@@ -49,6 +67,9 @@ export default function PlayAudio(): React.ReactElement {
       )}
     </ul>
   )
+  if (isLoading) {
+    return <div>Loading audio tracks...</div>
+  }
   if (playlist.length >= 1) {
     return (
       <section>

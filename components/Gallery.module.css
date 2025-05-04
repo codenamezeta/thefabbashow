@@ -42,54 +42,55 @@
 }
 
 /* Gallery layout overrides (using :global is necessary for CSS modules) */
-:global(.image-gallery-content) {
+.galleryWrapper :global(.image-gallery-content) {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-:global(.image-gallery-slide-wrapper) {
+.galleryWrapper :global(.image-gallery-slide-wrapper) {
   order: 1; /* Display slides first */
   margin-bottom: 2.5rem; /* Space for controls */
 }
 
-:global(.image-gallery) {
+.galleryWrapper :global(.image-gallery) {
   padding-bottom: 3rem;
 }
 
 /* Position controls below the content */
-:global(.image-gallery-bullets) {
+.galleryWrapper :global(.image-gallery-bullets) {
   bottom: -2rem;
   top: auto;
   width: 100%;
   position: absolute;
 }
 
-:global(.image-gallery-content .image-gallery-play-button),
-:global(.image-gallery-content .image-gallery-fullscreen-button) {
+.galleryWrapper :global(.image-gallery-content .image-gallery-play-button),
+.galleryWrapper
+  :global(.image-gallery-content .image-gallery-fullscreen-button) {
   bottom: -2.5rem;
   top: auto;
 }
 
-:global(.image-gallery-play-button) {
+.galleryWrapper :global(.image-gallery-play-button) {
   left: 0;
 }
 
-:global(.image-gallery-fullscreen-button) {
+.galleryWrapper :global(.image-gallery-fullscreen-button) {
   right: 0;
 }
 
 /* Style active bullet */
-:global(.image-gallery-bullet.active) {
+.galleryWrapper :global(.image-gallery-bullet.active) {
   background: var(--primary);
   border-color: var(--primary);
 }
 
 /* Enable vertical scrolling while keeping horizontal swipe functionality */
-:global(.image-gallery),
-:global(.image-gallery-swipe),
-:global(.image-gallery-slides),
-:global(.image-gallery-slide) {
+.galleryWrapper :global(.image-gallery),
+.galleryWrapper :global(.image-gallery-swipe),
+.galleryWrapper :global(.image-gallery-slides),
+.galleryWrapper :global(.image-gallery-slide) {
   touch-action: pan-y !important; /* Allow vertical scrolling */
 }
 
