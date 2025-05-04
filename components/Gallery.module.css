@@ -1,0 +1,100 @@
+/* Basic gallery item styling */
+.imageGalleryItem {
+  display: flex;
+  flex-direction: column;
+  height: 67vh;
+  width: 100%;
+  /* aspect-ratio: 16/9; */
+  @media screen and (max-width: 768px) {
+    height: 20rem;
+  }
+}
+
+.mediaContainer {
+  position: relative;
+  flex-grow: 1;
+  /* height: 100%; */
+  width: 100%;
+  min-height: 300px;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.imageElement,
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.videoElement {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+.descriptionContainer {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+}
+
+.imageGalleryDescription {
+  color: var(--middleground);
+  font-size: 0.875rem;
+}
+
+/* Gallery layout overrides (using :global is necessary for CSS modules) */
+:global(.image-gallery-content) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.image-gallery-slide-wrapper) {
+  order: 1; /* Display slides first */
+  margin-bottom: 2.5rem; /* Space for controls */
+}
+
+:global(.image-gallery) {
+  padding-bottom: 3rem;
+}
+
+/* Position controls below the content */
+:global(.image-gallery-bullets) {
+  bottom: -2rem;
+  top: auto;
+  width: 100%;
+  position: absolute;
+}
+
+:global(.image-gallery-content .image-gallery-play-button),
+:global(.image-gallery-content .image-gallery-fullscreen-button) {
+  bottom: -2.5rem;
+  top: auto;
+}
+
+:global(.image-gallery-play-button) {
+  left: 0;
+}
+
+:global(.image-gallery-fullscreen-button) {
+  right: 0;
+}
+
+/* Style active bullet */
+:global(.image-gallery-bullet.active) {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Enable vertical scrolling while keeping horizontal swipe functionality */
+:global(.image-gallery),
+:global(.image-gallery-swipe),
+:global(.image-gallery-slides),
+:global(.image-gallery-slide) {
+  touch-action: pan-y !important; /* Allow vertical scrolling */
+}
+
+/* Make sure content containers don't block scrolling either */
+.imageGalleryItem,
+.mediaContainer {
+  touch-action: pan-y;
+}

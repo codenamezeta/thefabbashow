@@ -1,0 +1,17 @@
+.footer {
+  /* background-color: var(--secondary-dark); */
+  /* background: url('/imgs/bg-03.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white; */
+  text-align: center;
+  padding: 1rem;
+
+  .copyright {
+    display: block;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--gray-200);
+  }
+}

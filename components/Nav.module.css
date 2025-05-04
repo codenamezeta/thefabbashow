@@ -1,0 +1,263 @@
+.nav {
+  position: relative;
+  width: 100%;
+  background-color: var(--background);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  z-index: 100;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+  }
+
+  &.transparent {
+    background-color: transparent;
+    box-shadow: none;
+
+    & .navLink:not(:hover) {
+      color: var(--light);
+    }
+
+    &:not(.mobileOpen) {
+      color: var(--foreground);
+    }
+
+    &.scrolled {
+      background-color: var(--background);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobileMenuButton {
+      color: var(--foreground);
+
+      &.scrolled {
+        color: var(--foreground);
+      }
+    }
+  }
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: var(--spacing-sm) var(--container-padding);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: auto;
+  max-height: 80px;
+  width: auto;
+}
+
+/* Desktop Navigation */
+.navItems {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-md);
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  color: var(--foreground);
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  transition: color var(--transition-fast);
+
+  &:hover,
+  &:focus {
+    color: var(--primary);
+  }
+}
+
+.nestedDropdown {
+  margin-left: 1rem; /* Adjust as needed */
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--gray-200);
+}
+
+.nestedMobileItem {
+  padding-left: 1rem;
+  border-left: 1px solid var(--gray-200);
+  margin-left: 1rem;
+}
+
+.nestedMobileLink {
+  font-size: 0.9rem;
+}
+
+.active {
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+.hasDropdown {
+  button.navLink {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  &:hover .dropdown,
+  &:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdownArrow {
+  font-size: 0.6rem;
+  margin-left: var(--spacing-xs);
+  transition: transform 0.2s ease;
+
+  .active & {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: var(--background);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-sm) 0;
+  z-index: 100;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdownLink {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--foreground);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+
+  &:hover,
+  &:focus {
+    background-color: var(--gray-100);
+    color: var(--primary);
+  }
+}
+
+/* Mobile Navigation */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+
+  &.open {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+.mobileNavItems {
+  list-style: none;
+  padding: var(--spacing-md);
+  margin: 0;
+}
+
+.mobileNavItem {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobileNavLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: var(--border-radius-sm);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: var(--gray-100);
+  }
+}
+
+.mobileDropdown {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--spacing-xs);
+  margin-left: var(--spacing-md);
+}
+
+.mobileDropdownLink {
+  display: block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--foreground);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+
+  &:hover,
+  &:focus {
+    background-color: var(--gray-100);
+  }
+}
+
+/* Media query for portrait/mobile orientation */
+@media (max-width: 768px) {
+  .navItems {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+}

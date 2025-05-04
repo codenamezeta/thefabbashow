@@ -1,0 +1,273 @@
+/* Common styles */
+.figure {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.figureCaption {
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+/* Image styles */
+.image {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+/* Video styles */
+.videoContainer {
+  aspect-ratio: 16/9;
+}
+
+.videoFrame {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  border: 0;
+}
+
+/* Audio styles */
+.audioContainer {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.audioTitle {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.audioDescription {
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.audioPlayer {
+  width: 100%;
+}
+
+/* Event reference styles - Common */
+/* .eventReference {
+  margin: 1.5rem 0;
+} */
+
+/* Event reference - Inline style */
+.eventReferenceInline {
+  display: inline;
+  font-weight: 700;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* Event reference - Card style */
+.eventReferenceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100%;
+  max-width: 20rem;
+  margin: 0.5rem 1rem 1rem 0;
+  padding: 0 0.67rem;
+  background-color: var(--background);
+  border: 1px solid var(--middleground);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.eventCardContent {
+  padding: 1rem;
+  color: var(--foreground);
+  /* background-color: #f9fafb; */
+}
+
+.eventCardTitle {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.eventCardDate {
+  display: block;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0 0 0.5rem 0;
+  text-decoration: none;
+}
+
+.eventImageContainer {
+  /* position: relative; */
+  /* height: 12rem; */
+  width: 100%;
+  /* background-color: #f3f4f6; */
+}
+
+/* Event reference - Full style */
+.eventReferenceFull {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.eventFullContent {
+  padding: 1.25rem;
+}
+
+.eventFullTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.eventFullDate {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.eventFullDescription {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.eventButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: white;
+  background-color: #2563eb;
+}
+
+.eventButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* Venue reference styles - Common */
+.venueReference {
+  margin: 1.5rem 0;
+}
+
+/* Venue reference - Inline style */
+.venueReferenceInline {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: #dcfce7;
+  color: #166534;
+  margin: 0 0.25rem;
+}
+
+/* Venue reference - Card style */
+.venueReferenceCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.venueCardContent {
+  padding: 1rem;
+  background-color: #f9fafb;
+}
+
+.venueCardTitle {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.venueCardLocation {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* Venue reference - Full style */
+.venueReferenceFull {
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.venueImageContainer {
+  position: relative;
+  height: 12rem;
+  width: 100%;
+  background-color: #f3f4f6;
+}
+
+.venueFullContent {
+  padding: 1.25rem;
+}
+
+.venueFullTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.venueFullLocation {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #16a34a;
+  margin-bottom: 0.5rem;
+}
+
+.venueFullDescription {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.venueButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: white;
+  background-color: #16a34a;
+}
+
+.venueButton:hover {
+  background-color: #15803d;
+}

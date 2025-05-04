@@ -1,0 +1,88 @@
+.playlistHeader {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0;
+  flex-direction: column;
+  list-style: none;
+  .playlistItem {
+    cursor: pointer;
+    width: 100%;
+    border-bottom: 1px solid var(--color-grey-300);
+    border-radius: var(--border-radius-lg);
+  }
+  .playlistItem:hover {
+    background-color: var(--accent);
+    padding-left: 1rem;
+    --foreground: var(--secondary);
+    color: var(--foreground);
+  }
+  .active {
+    padding-left: 1rem;
+    --foreground: var(--accent);
+    color: var(--foreground);
+  }
+}
+
+.audioPlayer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 4rem;
+  margin: 0;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid var(--accent);
+  text-shadow: -0.01rem 0.01rem 1px rgb(255, 255, 255);
+  background-color: var(--primary);
+  background-image: url('/imgs/diamonds.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Important to clip the background image */
+  @media (prefers-color-scheme: dark) {
+    --foreground: var(--light);
+  }
+  .imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  .eventImage {
+    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .overlayDark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+    z-index: 2;
+  }
+  .overlayLight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
+    z-index: 2;
+  }
+  .content {
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

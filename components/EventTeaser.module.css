@@ -1,0 +1,128 @@
+.eventTeaser {
+  --foreground: var(--light);
+  background-color: var(--primary);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid var(--accent);
+  text-shadow: -0.05rem 0.05rem 2px rgba(0, 0, 0, 1);
+  background-image: url('/imgs/stars.png'), url('/imgs/stars.png');
+  background-size: 25%, 50%;
+  background-position: 5% 5%, 95% 105%;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Important to clip the background image */
+
+  @media (prefers-color-scheme: dark) {
+    --foreground: var(--light);
+  }
+
+  .imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .eventImage {
+    z-index: 1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlayDark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+    z-index: 2;
+  }
+  .overlayLight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5));
+    z-index: 2;
+  }
+
+  /* Content container */
+  .content {
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+
+    & .date {
+      text-align: center;
+      h2,
+      h4 {
+        margin: 0;
+      }
+      @media screen and (min-width: 768px) {
+        width: 20%;
+        text-align: left;
+      }
+    }
+
+    & .location {
+      text-align: center;
+      > * {
+        margin: 0;
+      }
+    }
+
+    & .actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* align-items: flex-end; */
+      /* align-self: stretch; */
+      min-height: 10rem;
+      @media screen and (min-width: 768px) {
+        width: 20%;
+        text-align: left;
+      }
+    }
+
+    .longText {
+      width: 100%;
+      margin: 0.5em 0;
+      text-align: center;
+      color: var(--light);
+      white-space: normal; /* Use nowrap to keep text on one line or normal to allow wrapping */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: calc(12px + 0.4vw); /* Base responsive sizing */
+      /* For multi-line text with maximum height */
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2; /* Maximum 2 lines */
+      -webkit-box-orient: vertical;
+      max-height: 2.4em; /* 2 lines × 1.2 line height */
+      line-height: 1.2;
+      @media screen and (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

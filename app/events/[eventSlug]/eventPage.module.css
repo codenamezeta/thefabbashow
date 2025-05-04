@@ -1,0 +1,96 @@
+article.eventPage {
+  .eventButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  & .backLink {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-lg) 0;
+    margin: var(--spacing-sm) 0;
+    transition: color 0.2s;
+    &:hover {
+      color: var(--primary);
+      font-size: var(--font-size-sm);
+      text-decoration: underline;
+    }
+  }
+  /* 
+  & aside {
+    min-width: 100%;
+  } */
+
+  & main {
+    h1 {
+      font-size: var(--font-size-h2);
+    }
+    h2 {
+      font-size: var(--font-size-h3);
+    }
+    h3 {
+      font-size: var(--font-size-h4);
+    }
+    h4 {
+      font-size: var(--font-size-h5);
+    }
+    h5 {
+      font-size: var(--font-size-h6);
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0;
+
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+    }
+
+    & .eventDescription {
+      width: 67%;
+      margin-right: var(--spacing-xl);
+
+      @media screen and (max-width: 1200px) {
+        margin-right: 0;
+        /* width: 100%; */
+      }
+
+      blockquote {
+        color: var(--foreground);
+        font-size: var(--font-size-sm);
+        font-weight: 500;
+        margin: var(--spacing-lg) 0;
+        padding: var(--spacing-sm) var(--spacing-md);
+        /* max-width: 75ch; */
+      }
+    }
+  }
+}
+
+.eventDetails {
+  min-width: 33%;
+  & .detailsList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: 0;
+    list-style-position: outside;
+  }
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    background-color: var(--gray-100);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
