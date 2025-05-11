@@ -15,20 +15,20 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next"
+        "name": "next" // Ensure this plugin is present
       }
     ],
     "paths": {
       "@/*": ["./*"]
     },
-    "typeRoots": ["./node_modules/@types", "./types"]
+    "typeRoots": ["./types"]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
+    ".next/types/**/*.ts", // Also ensure this line is present
     "types/**/*.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "_CMS_temp"]
 }

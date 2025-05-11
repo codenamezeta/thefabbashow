@@ -11,6 +11,11 @@ import AddToCalendarButton from '@/components/AddToCalendarButton'
 import { IoTicketOutline } from 'react-icons/io5'
 // import FollowUs from '@/components/FollowUs'
 
+interface EventPageProps {
+  params: Promise<{ eventSlug: string }>
+  // searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Also make searchParams a Promise if you use it and it's typed as such in .next/types
+}
+
 /**
  * Composes heading and subheading based on available event data
  * Uses cascading priority: eventName > date > venue > empty
@@ -57,11 +62,8 @@ function composeEventTitles(event: EventType): {
   }
 }
 
-export default async function Page({
-  params,
-}: {
-  params: { eventSlug: string }
-}) {
+export default async function Page({ params: paramsPromise }: EventPageProps) {
+  const params = await paramsPromise
   const event: EventType = await getEvent(params.eventSlug)
   if (!event) {
     console.log('Event not found for slug:', params.eventSlug)

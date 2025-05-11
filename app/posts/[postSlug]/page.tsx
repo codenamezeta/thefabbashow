@@ -12,15 +12,21 @@ import styles from './postPage.module.css'
 // import { IoTicketOutline } from 'react-icons/io5'
 // import FollowUs from '@/components/FollowUs'
 
+// Define an interface for the page props where params is a Promise
+interface PostPageProps {
+  params: Promise<{ postSlug: string }>
+  // searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Add if you use searchParams
+}
+
 export default async function PostPage({
-  params,
-}: {
-  params: { postSlug: string }
-}) {
-  const { postSlug } = await params
-  const post: PostType = await getPostBySlug(postSlug)
+  params: paramsPromise,
+}: PostPageProps) {
+  // Await the paramsPromise to get the actual params object
+  const params = await paramsPromise
+  // Now use the resolved params object
+  const post: PostType = await getPostBySlug(params.postSlug)
   if (!post) {
-    console.log('Post not found for:', postSlug)
+    console.log('Post not found for:', params.postSlug)
     return (
       <div className='container'>
         <h1>Event Not Found</h1>
