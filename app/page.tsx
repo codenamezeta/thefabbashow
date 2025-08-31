@@ -10,6 +10,8 @@ import { getGalleyItems } from '@/lib/sanityQueries'
 import Members from '@/components/Members'
 import VisualHighlights from '@/components/VisualHighlights'
 import Audio from '@/components/Audio'
+import Link from 'next/link'
+import Button from '@/components/Button'
 
 type NextEvents = EventType[]
 
@@ -22,20 +24,19 @@ export default async function Home() {
   // console.log('Gallery Items:', galleryItems)
   // Sample hightlight images
   const highlightImages = [
+    {
+      src: '/imgs/highlights/banner-02.jpg',
+      alt: 'ABBA show performance highlight',
+    },
     { src: '/imgs/highlights/highlight-02.jpg', alt: 'ABBA dancers on stage' },
     {
       src: '/imgs/highlights/highlight-03.png',
       alt: 'ABBA singers performing',
     },
-    {
-      src: '/imgs/highlights/highlight-01.jpg',
-      alt: 'ABBA show performance highlight',
-    },
   ]
 
   return (
     <>
-      <VideoPlayer autoplay />
       <main className={styles.main}>
         <div className={`container ${styles.mainContent}`}>
           <div className={styles.textContent}>
@@ -74,6 +75,9 @@ export default async function Home() {
           </div>
           <VisualHighlights images={highlightImages} />
         </div>
+        <div className='container'>
+          <VideoPlayer autoplay />
+        </div>
         <Image
           src='/imgs/disco-ball-02.png'
           alt='ABBA'
@@ -90,20 +94,25 @@ export default async function Home() {
               <EventTeaser key={event._id} event={event} />
             ))}
           </div>
+          <Link href={'/events'} style={{ width: '100%' }}>
+            <Button size='xl' fullWidth variant='accent'>
+              View All Events
+            </Button>
+          </Link>
         </div>
       </section>
       <FollowUs />
       <Gallery items={galleryItems} />
       <Members />
       <Audio />
-      <section>
+      {/* <section>
         <Image
           src='/imgs/photos/poster-02.jpg'
           width={2000}
           height={4000}
           alt='The FABBA Show Poster'
         />
-      </section>
+      </section> */}
     </>
   )
 }

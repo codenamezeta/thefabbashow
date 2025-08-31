@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto, Concert_One } from 'next/font/google'
+import { Roboto, Noto_Sans } from 'next/font/google'
 import './globals.css'
 import Nav, { NavItem } from '../components/Nav'
 import Footer from '@/components/Footer'
@@ -9,11 +9,17 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 
-const concertOne = Concert_One({
+const nontSans = Noto_Sans({
   variable: '--font-heading',
-  weight: '400',
   subsets: ['latin'],
 })
+
+//- MC Didn't look the rounded look of Concert One. It's "too fun"
+// const concertOne = Concert_One({
+//   variable: '--font-heading',
+//   weight: '400',
+//   subsets: ['latin'],
+// })
 
 export const metadata: Metadata = {
   title: 'The fABBA Show',
@@ -43,8 +49,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${roboto.variable} ${concertOne.variable}`}>
-        <Nav items={navItems} logo={logo} sticky transparentOnTop />
+      <body className={`${roboto.variable} ${nontSans.variable}`}>
+        <Nav items={navItems} logo={logo} sticky />
         {children}
 
         <Footer />

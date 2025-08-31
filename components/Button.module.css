@@ -83,21 +83,41 @@
 
 .secondary:not(:disabled) {
   background-color: var(--secondary);
-  color: var(--background);
+  color: var(--dark);
   border: 1px solid var(--accent);
   text-shadow: none;
 }
 
 .secondary:hover:not(:disabled) {
-  background-color: var(--secondary-light);
-  color: var(--accent);
-  border: 2px solid solid var(--accent);
+  background-color: var(--secondary-dark);
+  color: var(--light);
+  border: 2px solid var(--accent);
   transform: translateY(-1px);
 }
 
 .secondary:active:not(:disabled) {
   background-color: var(--secondary-dark);
-  border: 2px solid solid var(--accent);
+  border: 2px solid var(--accent);
+  transform: translateY(0);
+}
+
+.accent:not(:disabled) {
+  background-color: var(--accent);
+  color: var(--background);
+  border: 1px solid var(--accent);
+  text-shadow: none;
+}
+
+.accent:hover:not(:disabled) {
+  background-color: var(--foreground);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  transform: translateY(-1px);
+}
+
+.accent:active:not(:disabled) {
+  background-color: var(--accent-dark);
+  border: 2px solid var(--accent);
   transform: translateY(0);
 }
 

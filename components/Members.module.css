@@ -1,8 +1,9 @@
 .members {
-  background: url('/imgs/bg-04.jpg');
+  /* background: url('/imgs/bg-04.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: var(--primary-dark);
 
   .content {
     display: flex;
@@ -25,21 +26,23 @@
     width: 20%;
     background-color: var(--secondary);
 
-    h2,
     span {
-      color: var(--light);
+      color: var(--dark);
+      font-size: 1.25rem;
+    }
+    h3,
+    h4 {
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+      color: var(--primary-dark);
       paint-order: stroke fill;
-      -webkit-text-stroke: 0.25rem black;
+      -webkit-text-stroke: 0.1rem black;
     }
   }
 
   .member img {
     width: 100%;
     border-radius: 5px;
-  }
-
-  .member h2 {
-    margin: 0.5rem 0;
   }
 
   .member p {

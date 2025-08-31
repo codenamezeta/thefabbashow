@@ -15,7 +15,7 @@ export default function Members() {
           />
           <h3>Andy Marshall</h3>
           <span>As</span>
-          <span>Björn Ulvaeus</span>
+          <h4>Björn Ulvaeus</h4>
         </div>
         <div className={styles.member}>
           <Image
@@ -26,7 +26,7 @@ export default function Members() {
           />
           <h3>Marie-Claire Marshall</h3>
           <span>As</span>
-          <span>Anni-Frid Lyngstad</span>
+          <h4>Anni-Frid Lyngstad</h4>
         </div>
         <div className={styles.member}>
           <Image
@@ -37,7 +37,7 @@ export default function Members() {
           />
           <h3>Julianne Ruck</h3>
           <span>As</span>
-          <span>Agnetha Fältskog</span>
+          <h4>Agnetha Fältskog</h4>
         </div>
         <div className={styles.member}>
           <Image
@@ -48,7 +48,7 @@ export default function Members() {
           />
           <h3>Lars Midthun</h3>
           <span>As</span>
-          <span>Benny Andersson</span>
+          <h4>Benny Andersson</h4>
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ export default async function Events() {
   return (
     <>
       <Header
-        backgroundImage='/imgs/fabba-07.jpg'
+        backgroundImage='/imgs/photos/banner-01.jpg'
         title='Upcoming Events'
         subtitle='Experience ABBA like never before!'
         height='50vh'

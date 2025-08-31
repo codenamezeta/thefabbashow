@@ -48,18 +48,13 @@ article.eventPage {
     justify-content: space-between;
     padding-top: 0;
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
       flex-direction: column;
     }
 
     & .eventDescription {
-      width: 67%;
+      width: 100%;
       margin-right: var(--spacing-xl);
-
-      @media screen and (max-width: 1200px) {
-        margin-right: 0;
-        /* width: 100%; */
-      }
 
       blockquote {
         color: var(--foreground);

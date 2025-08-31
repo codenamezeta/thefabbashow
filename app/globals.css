@@ -6,17 +6,19 @@
 :root {
   /* Colors */
   --light: #fff8f0;
-  --dark: #3f3f41;
+  /* --dark: #3f3f41; */
+  --dark: #000000;
   --background: var(--light);
   --foreground: var(--dark);
-  --middleground: hsl(0, 0%, 49%);
-  --primary: #78b8a7;
-  --primary-light: #34cccf;
-  --primary-dark: #1d96c4;
-  --secondary: #fec445;
-  --secondary-light: #fff187;
-  --secondary-dark: #e8bc1e;
-  --accent: #de4828;
+  --middleground: hsl(0, 0%, 50%);
+  --primary: hsl(164, 25%, 60%);
+  --primary-light: hsl(181, 33%, 51%);
+  --primary-dark: hsl(197, 50%, 44%);
+  --cream: hsl(56, 100%, 91%);
+  --secondary: hsl(41, 75%, 85%);
+  --secondary-light: hsl(53, 75%, 75%);
+  --secondary-dark: hsl(47, 50%, 67%);
+  --accent: hsl(11, 50%, 51%);
   --error: hsl(0, 100%, 50%);
   --success: hsl(120, 50%, 50%);
   --important: hsl(48, 100%, 50%);
@@ -83,7 +85,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: #fff8f0;
-    --background: #3f3f41;
+    /* --background: #3f3f41; */
+    --background: #000000;
     --middleground: hsl(0, 0%, 49%);
     --primary: #78b8a7;
     --primary-light: #34cccf;
@@ -139,7 +142,7 @@
 /* Override for dark theme when manually selected */
 [data-theme='dark'] {
   --foreground: #fff8f0;
-  --background: #3f3f41;
+  --background: #111111;
   --middleground: hsl(0, 0%, 35%);
   /* Include all your dark theme variables here */
 

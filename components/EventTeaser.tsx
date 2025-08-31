@@ -55,7 +55,7 @@ export default function EventTeaser({ event }: { event: EventType }) {
           {/* Buttons */}
           {event.slug && (
             <Button
-              variant='secondary'
+              variant='primary'
               size='lg'
               href={`/events/${event.slug}`}
               className={styles.secondaryButton}
@@ -67,7 +67,7 @@ export default function EventTeaser({ event }: { event: EventType }) {
           {event.getTickets && (
             <Button
               href={event.getTickets}
-              variant='primary'
+              variant='secondary'
               disabled={event.soldOut}
               size='lg'
               className={styles.CTAButton}

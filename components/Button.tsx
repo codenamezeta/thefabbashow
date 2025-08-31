@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 import Link from 'next/link'
 import styles from './Button.module.css'
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost'
+type ButtonVariant = 'primary' | 'secondary' | 'accent' | 'outline' | 'ghost'
 type ButtonSize = 'sm' | 'md' | 'lg' | 'xl'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

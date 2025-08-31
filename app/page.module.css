@@ -1,4 +1,6 @@
 main.main {
+  padding-top: 10%;
+
   p {
     font-size: 1.5rem;
     line-height: 1.5;
@@ -37,13 +39,14 @@ main.main {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    opacity: 0.05;
+    opacity: 0.07;
   }
 }
 
 section.nextEvents {
-  background: url('/imgs/bg-01.jpg');
+  /* background: url('/imgs/bg-01.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: var(--secondary);
 }
