@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; */
-  background-color: var(--primary-dark);
+  /* background-color: var(--primary-dark); */
 
   .content {
     display: flex;
@@ -21,20 +21,20 @@
     align-items: center;
     margin: 1rem;
     padding: 1rem;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--secondary-light);
     border-radius: 5px;
     width: 20%;
-    background-color: var(--secondary);
+    background-color: var(--primary-light);
 
     span {
-      color: var(--dark);
-      font-size: 1.25rem;
+      color: var(--light);
+      font-size: 0.75rem;
     }
     h3,
     h4 {
       margin: 0.5rem 0;
       font-size: 1.5rem;
-      color: var(--primary-dark);
+      color: var(--secondary);
       paint-order: stroke fill;
       -webkit-text-stroke: 0.1rem black;
     }

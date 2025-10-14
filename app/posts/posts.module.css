@@ -4,21 +4,21 @@
   padding: 2rem 1rem;
 }
 
-.container::after {
+/* .container::after {
   content: '';
   /* background-image: url('/imgs/bg-01.jpg'); */
-  background-color: var(--secondary);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.75;
-  z-index: -1;
-}
+/* background-color: var(--primary);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+opacity: 0.75;
+z-index: -1; */
+/* } */
 
 .grid {
   display: grid;
@@ -39,7 +39,7 @@
 }
 
 .card {
-  border: 1px solid var(--middleground);
+  border: 1px solid var(--secondary);
   background-color: var(--background);
   border-radius: 0.5rem;
   overflow: hidden;

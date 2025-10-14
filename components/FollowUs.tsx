@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function FollowUs() {
   return (
-    <section className={styles.followUs}>
+    <section className={`${styles.followUs}`}>
       <h2>Follow Us</h2>
       <span>@theFABBAshow</span>
       <ul>

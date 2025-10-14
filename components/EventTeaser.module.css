@@ -14,8 +14,8 @@
   border: 1px solid var(--accent);
   text-shadow: -0.05rem 0.05rem 2px rgba(0, 0, 0, 1);
   background-image: url('/imgs/stars.png'), url('/imgs/stars.png');
-  background-size: 25%, 50%;
-  background-position: 5% 5%, 95% 105%;
+  background-size: 12%, 6%;
+  background-position: 88% 15%, 75% 67%;
   background-repeat: no-repeat;
   overflow: hidden; /* Important to clip the background image */
 

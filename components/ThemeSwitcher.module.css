@@ -9,21 +9,21 @@
 
 .label {
   font-size: var(--font-size-sm);
-  color: var(--middleground);
+  color: var(--accent);
   transition: color var(--transition-fast);
 }
 
 :global(.dark) .label {
-  color: var(--light);
+  color: var(--foreground);
 }
 
 [data-theme='dark'] .label {
-  color: var(--light);
+  color: var(--foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   .label {
-    color: var(--light);
+    color: var(--foreground);
   }
 }
 
@@ -31,7 +31,9 @@
   display: flex;
   gap: 0.5rem;
   justify-content: space-between;
-  background-color: var(--gray-100);
+  background-color: var(--background);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--secondary-dark);
   border-radius: 9999px;
   padding: 0.25rem;
   width: 8rem;
@@ -43,7 +45,7 @@
   justify-content: center;
   border: none;
   background: transparent;
-  color: var(--middleground);
+  color: var(--foreground);
   width: 2.5rem; /* Slightly increased size */
   height: 2.5rem; /* Slightly increased size */
   border-radius: 50%;
@@ -62,7 +64,7 @@
 }
 
 .themeButton:hover {
-  color: var(--foreground);
+  color: var(--secondary-dark);
   background-color: rgba(0, 0, 0, 0.05);
 }
 

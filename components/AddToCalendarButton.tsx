@@ -59,7 +59,7 @@ export default function AddToCalendarButton({ event }: { event: EventType }) {
         .join(', ')
     : ''
 
-  // Format description
+  // Format Description
   const plainTextDescription = event.description
     ? portableTextToPlainText(event.description)
     : 'Join us for The fABBA Show!'
@@ -82,7 +82,7 @@ export default function AddToCalendarButton({ event }: { event: EventType }) {
   }
 
   return (
-    <Button onClick={handleAddToCalendarClick} variant='secondary' size='lg'>
+    <Button onClick={handleAddToCalendarClick} variant='primary' size='lg'>
       <Script
         src='https://cdn.jsdelivr.net/npm/add-to-calendar-button@2'
         strategy='afterInteractive'

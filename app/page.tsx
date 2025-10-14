@@ -86,16 +86,16 @@ export default async function Home() {
           className={styles.discoBall}
         />
       </main>
-      <section className={styles.nextEvents}>
+      <section className={`${'blue-gradient'} ${styles.eventsSection}`}>
         <div className='container'>
-          <h2 className='textStroke'>Upcoming Events:</h2>
+          <h2 className='textStroke'>Upcoming Events</h2>
           <div className={styles.eventList}>
             {nextEvents.map((event) => (
               <EventTeaser key={event._id} event={event} />
             ))}
           </div>
           <Link href={'/events'} style={{ width: '100%' }}>
-            <Button size='xl' fullWidth variant='accent'>
+            <Button size='lg' fullWidth variant='secondary'>
               View All Events
             </Button>
           </Link>

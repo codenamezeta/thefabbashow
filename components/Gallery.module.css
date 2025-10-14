@@ -37,7 +37,7 @@
 }
 
 .imageGalleryDescription {
-  color: var(--middleground);
+  color: var(--accent);
   font-size: 0.875rem;
 }
 

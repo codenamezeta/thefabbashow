@@ -64,14 +64,15 @@
 
 /* Variants */
 .primary:not(:disabled) {
-  background-color: var(--primary);
-  color: var(--background);
+  background-color: var(--primary-dark);
+  color: var(--light);
+  font-weight: 900;
   border: 1px solid var(--background);
   text-shadow: none;
 }
 
 .primary:hover:not(:disabled) {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-light);
   color: var(--light);
   transform: translateY(-1px);
 }
@@ -83,14 +84,14 @@
 
 .secondary:not(:disabled) {
   background-color: var(--secondary);
-  color: var(--dark);
-  border: 1px solid var(--accent);
+  color: var(--background);
+  border: 1px solid var(--background);
   text-shadow: none;
 }
 
 .secondary:hover:not(:disabled) {
   background-color: var(--secondary-dark);
-  color: var(--light);
+  color: var(--background);
   border: 2px solid var(--accent);
   transform: translateY(-1px);
 }

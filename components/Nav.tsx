@@ -276,7 +276,7 @@ export default function Nav({
       id='main_navbar'
       className={`${navClasses} ${
         sticky && !transparentOnTop ? 'body-padding-top' : ''
-      }`}
+      } ${'blue-gradient'}`}
       ref={navRef}
       aria-label='Main navigation'
     >

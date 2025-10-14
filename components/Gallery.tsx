@@ -156,7 +156,7 @@ export default function Gallery({
   return (
     <section>
       <div className='container'>
-        <h2 className='textStroke'>Gallery:</h2>
+        <h2 className='textStroke'>Gallery</h2>
         <ImageGallery
           ref={galleryRef}
           items={items}

@@ -9,7 +9,7 @@ const roboto = Roboto({
   subsets: ['latin'],
 })
 
-const nontSans = Noto_Sans({
+const notoSans = Noto_Sans({
   variable: '--font-heading',
   subsets: ['latin'],
 })
@@ -49,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${roboto.variable} ${nontSans.variable}`}>
+      <body className={`${roboto.variable} ${notoSans.variable}`}>
         <Nav items={navItems} logo={logo} sticky />
         {children}
 

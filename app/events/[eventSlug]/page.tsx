@@ -99,7 +99,7 @@ export default async function Page({ params: paramsPromise }: EventPageProps) {
           {event.getTickets && (
             <Button
               href={event.getTickets}
-              variant='primary'
+              variant='secondary'
               disabled={event.soldOut}
               size='lg'
             >

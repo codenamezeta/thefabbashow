@@ -78,7 +78,7 @@
   margin: 0.5rem 1rem 1rem 0;
   padding: 0 0.67rem;
   background-color: var(--background);
-  border: 1px solid var(--middleground);
+  border: 1px solid var(--secondary);
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -143,6 +143,7 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 
@@ -252,6 +253,7 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 

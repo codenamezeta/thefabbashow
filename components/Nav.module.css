@@ -1,7 +1,7 @@
 .nav {
   position: relative;
   width: 100%;
-  background-color: var(--primary);
+  /* background-color: var(--primary-dark); */
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-normal);
   z-index: 100;
@@ -73,16 +73,15 @@
 .navLink {
   display: flex;
   align-items: center;
-  color: var(--background);
+  color: var(--light);
   font-weight: 500;
   text-decoration: none;
   padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
   transition: color var(--transition-fast);
 
-  &:hover,
-  &:focus {
-    color: var(--secondary-light);
+  &:hover {
+    color: var(--secondary);
   }
 }
 
@@ -102,8 +101,9 @@
   font-size: 0.9rem;
 }
 
-.active {
-  color: var(--foreground) !important;
+.active,
+:focus {
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -170,7 +170,7 @@
   display: none;
   background: none;
   border: none;
-  color: var(--foreground);
+  color: var(--light);
   font-size: 1.5rem;
   cursor: pointer;
   padding: var(--spacing-xs);
@@ -218,12 +218,13 @@
   font-family: inherit;
   font-size: inherit;
   width: 100%;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: var(--gray-100);
+    background-color: var(--secondary);
+    color: var(--primary-dark);
   }
 }
 
