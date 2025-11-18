@@ -1,5 +1,5 @@
 {
-  "name": "the-fabba-show-2",
+  "name": "the-fabba-show",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
@@ -17,10 +17,10 @@
   "dependencies": {
     "@sanity/client": "^6.28.3",
     "@sanity/ui": "^2.15.17",
-    "@sanity/vision": "^4.13.0",
+    "@sanity/vision": "^4.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sanity": "^4.13.0",
+    "sanity": "^4.16.0",
     "styled-components": "^6.1.15"
   },
   "devDependencies": {

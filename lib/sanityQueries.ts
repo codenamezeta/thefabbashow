@@ -161,7 +161,48 @@ export async function getEvent(slug: string) {
     getTickets,
     "slug": slug.current,
     "thumbnail": eventImage.asset->{url, alt},
-    description
+    description[]{
+      ...,
+      _type == "eventReference" => {
+        ...,
+        event->{
+          _id,
+          eventName,
+          date,
+          time,
+          venue->{
+            name,
+            address,
+          },
+          price,
+          soldOut,
+          getTickets,
+          "slug": slug.current,
+          "thumbnail": eventImage.asset->{url, alt}
+        }
+      },
+      markDefs[]{
+        ...,
+        _type == "eventReference" => {
+          ...,
+          event->{
+            _id,
+            eventName,
+            date,
+            time,
+            venue->{
+              name,
+              address,
+            },
+            price,
+            soldOut,
+            getTickets,
+            "slug": slug.current,
+            "thumbnail": eventImage.asset->{url, alt}
+          }
+        }
+      }
+    }
   }`
 
   try {

@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'The fABBA Show 2',
+  title: 'The fABBA Show',
 
   projectId: 'l77qopcp',
   dataset: 'production',
