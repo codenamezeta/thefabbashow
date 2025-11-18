@@ -18,6 +18,11 @@ interface PostPageProps {
   // searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Add if you use searchParams
 }
 
+/**
+ * Revalidate the page every 60 seconds to fetch fresh data from Sanity.
+ */
+export const revalidate = 60
+
 export default async function PostPage({
   params: paramsPromise,
 }: PostPageProps) {

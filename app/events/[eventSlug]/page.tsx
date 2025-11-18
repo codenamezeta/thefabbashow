@@ -15,6 +15,10 @@ interface EventPageProps {
   params: Promise<{ eventSlug: string }>
   // searchParams?: Promise<{ [key: string]: string | string[] | undefined }>; // Also make searchParams a Promise if you use it and it's typed as such in .next/types
 }
+/**
+ * Revalidate the page every 60 seconds to fetch fresh data from Sanity.
+ */
+export const revalidate = 60
 
 /**
  * Composes heading and subheading based on available event data

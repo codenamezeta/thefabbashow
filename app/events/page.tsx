@@ -3,6 +3,11 @@ import { getNextEvents, EventType } from '@/lib/sanityQueries'
 import EventTeaser from '@/components/EventTeaser'
 import Header from '@/components/Header'
 
+/**
+ * Revalidate the page every 60 seconds to fetch fresh data from Sanity.
+ */
+export const revalidate = 60
+
 export default async function Events() {
   const allEvents = await getNextEvents(24)
 
