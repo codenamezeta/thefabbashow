@@ -9,6 +9,11 @@ import dateFormatter from '@/lib/dateFormatter'
 
 import { PortableTextBlock } from '@portabletext/types'
 
+/**
+ * Revalidate the page every 60 seconds to fetch fresh data from Sanity.
+ */
+export const revalidate = 60
+
 // Define types for Sanity block content
 type BlockContent = string | PortableTextBlock[] | null | undefined
 
