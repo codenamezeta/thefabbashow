@@ -11,6 +11,8 @@ export type EventType = {
   time?: string
   venue?: {
     name?: string
+    /** Present on legacy or manually edited venue docs even if omitted from current schema. */
+    location?: string
     address?: {
       street?: string
       lineTwo?: string
@@ -20,10 +22,11 @@ export type EventType = {
     }
   }
   description?: PortableTextBlock[]
-  price?: string
+  price?: string | number | null
   soldOut?: boolean
   getTickets?: string
   slug?: string
+  privateEvent?: boolean
   thumbnail?: {
     url?: string
     alt?: string
@@ -79,6 +82,13 @@ export type CategoryType = {
 
 const builder = imageUrlBuilder(client)
 
+/** Venue join — independent of whether the parent event has a slug (used only for routing). */
+const groqVenueJoin = `venue->{
+      name,
+      address,
+      location
+    }`
+
 // Function for image URLs with transformations
 export function urlForImage(source: SanityImageSource) {
   return builder.image(source)
@@ -98,12 +108,10 @@ export async function getAllEvents() {
     eventName,
     date,
     time,
-    venue->{
-      name,
-      address,
-    },
+    ${groqVenueJoin},
     price,
     soldOut,
+    privateEvent,
     getTickets,
     "slug": slug.current,
     "thumbnail": eventImage.asset->{url, alt}
@@ -124,12 +132,10 @@ export async function getNextEvents(amount: number) {
     eventName,
     date,
     time,
-    venue->{
-      name,
-      address,
-    },
+    ${groqVenueJoin},
     price,
     soldOut,
+    privateEvent,
     getTickets,
     "slug": slug.current,
     "thumbnail": eventImage.asset->{url, alt}
@@ -152,12 +158,10 @@ export async function getEvent(slug: string) {
     eventName,
     date,
     time,
-    venue->{
-      name,
-      address,
-    },
+    ${groqVenueJoin},
     price,
     soldOut,
+    privateEvent,
     getTickets,
     "slug": slug.current,
     "thumbnail": eventImage.asset->{url, alt},
@@ -170,12 +174,10 @@ export async function getEvent(slug: string) {
           eventName,
           date,
           time,
-          venue->{
-            name,
-            address,
-          },
+          ${groqVenueJoin},
           price,
           soldOut,
+          privateEvent,
           getTickets,
           "slug": slug.current,
           "thumbnail": eventImage.asset->{url, alt}
@@ -190,12 +192,10 @@ export async function getEvent(slug: string) {
             eventName,
             date,
             time,
-            venue->{
-              name,
-              address,
-            },
+            ${groqVenueJoin},
             price,
             soldOut,
+            privateEvent,
             getTickets,
             "slug": slug.current,
             "thumbnail": eventImage.asset->{url, alt}
@@ -317,12 +317,10 @@ export async function getPostBySlug(slug: string) {
           eventName,
           date,
           time,
-          venue->{
-            name,
-            address,
-          },
+          ${groqVenueJoin},
           price,
           soldOut,
+          privateEvent,
           getTickets,
           "slug": slug.current,
           "thumbnail": eventImage.asset->{url, alt},
@@ -338,12 +336,10 @@ export async function getPostBySlug(slug: string) {
             eventName,
             date,
             time,
-            venue->{
-              name,
-              address,
-            },
+            ${groqVenueJoin},
             price,
             soldOut,
+            privateEvent,
             getTickets,
             "slug": slug.current,
             "thumbnail": eventImage.asset->{url, alt},

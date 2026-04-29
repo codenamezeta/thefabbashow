@@ -69,6 +69,14 @@ export const eventType = defineType({
       type: 'boolean',
     }),
     defineField({
+      name: 'privateEvent',
+      title: 'Private Event',
+      description:
+        'When enabled, the site shows only the event date — no venue, ticket links, or detail page actions.',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       options: {
@@ -109,7 +117,7 @@ export const eventType = defineType({
       type: 'string',
       title: 'Custom Event Name',
       description:
-        'Override the defult event name. Leave blank for default name based on location.',
+        'Override the default event name. Leave blank for default name based on location.',
     }),
     defineField({
       name: 'eventImage',

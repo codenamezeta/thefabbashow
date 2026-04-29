@@ -36,6 +36,13 @@ function composeEventTitles(event: EventType): {
       })()
     : ''
 
+  if (event.privateEvent) {
+    return {
+      heading: formattedDate || 'Private Event',
+      subheading: formattedDate ? 'Private Event' : '',
+    }
+  }
+
   // Determine heading and subheading with cascading priority
   if (event.eventName) {
     // If event name exists, use it as heading
@@ -66,6 +73,13 @@ function composeEventTitles(event: EventType): {
   }
 }
 
+function getDisplayPrice(price: EventType['price']): string | null {
+  if (price === null || price === undefined) return null
+  if (typeof price === 'string' && price.trim() === '') return null
+  if (price === 0 || price === '0') return 'Free'
+  return `${price}`
+}
+
 export default async function Page({ params: paramsPromise }: EventPageProps) {
   const params = await paramsPromise
   const event: EventType = await getEvent(params.eventSlug)
@@ -82,6 +96,7 @@ export default async function Page({ params: paramsPromise }: EventPageProps) {
   // console.log('event:', event)
 
   const dateInfo = event.date ? dateFormatter(event.date) : null
+  const displayPrice = getDisplayPrice(event.price)
 
   // Get both heading and subheading with a single function call
   const { heading, subheading } = composeEventTitles(event)
@@ -96,11 +111,13 @@ export default async function Page({ params: paramsPromise }: EventPageProps) {
         backgroundImage={event.thumbnail?.url}
         title={heading || 'To Be Announced'}
         subtitle={subheading || 'Check back soon for details'}
-        height='50vh'
+        height='33vh'
       >
         <div className={styles.eventButtons}>
-          {event.date && <AddToCalendarButton event={event} />}
-          {event.getTickets && (
+          {!event.privateEvent && event.date && (
+            <AddToCalendarButton event={event} />
+          )}
+          {!event.privateEvent && event.getTickets && (
             <Button
               href={event.getTickets}
               variant='secondary'
@@ -120,7 +137,7 @@ export default async function Page({ params: paramsPromise }: EventPageProps) {
         </Link>
       </aside>
       <main className='container'>
-        {event.description && (
+        {!event.privateEvent && event.description && (
           <div className={styles.eventDescription}>
             {event.description ? (
               <PortableText
@@ -133,7 +150,13 @@ export default async function Page({ params: paramsPromise }: EventPageProps) {
           </div>
         )}
         <div className={styles.eventDetails}>
-          <h3>{event.eventName ? event.eventName : 'Event Details'}</h3>
+          <h3>
+            {event.privateEvent
+              ? 'Private Event'
+              : event.eventName
+                ? event.eventName
+                : 'Event Details'}
+          </h3>
           <ul className={styles.detailsList}>
             <li>
               <h4>Date:</h4>
@@ -143,56 +166,60 @@ export default async function Page({ params: paramsPromise }: EventPageProps) {
                   : 'Check back soon for details about the date'}
               </p>
             </li>
-            {event.time && (
+            {!event.privateEvent && event.time && (
               <li>
                 <h4>Time:</h4>
                 <p>{event.time}</p>
               </li>
             )}
-            <li>
-              <h4>Venue:</h4>
-              {event.venue ? (
-                <>
-                  <h5>{event.venue?.name}</h5>
-                  <p>
-                    {event.venue?.address?.street}
-                    <br />
-                    {event.venue?.address?.lineTwo && (
-                      <>
-                        {event.venue.address.lineTwo}
-                        <br />
-                      </>
-                    )}
-                    {`${event.venue?.address?.city}, ${event.venue?.address?.state} ${event.venue?.address?.zip}`}
-                  </p>
-                </>
-              ) : (
-                'Check back soon for details about the venue'
-              )}
-            </li>
-            <li>
-              <h4>Tickets:</h4>
+            {!event.privateEvent && (
+              <li>
+                <h4>Venue:</h4>
+                {event.venue ? (
+                  <>
+                    <h5>{event.venue?.name}</h5>
+                    <p>
+                      {event.venue?.address?.street}
+                      <br />
+                      {event.venue?.address?.lineTwo && (
+                        <>
+                          {event.venue.address.lineTwo}
+                          <br />
+                        </>
+                      )}
+                      {`${event.venue?.address?.city}, ${event.venue?.address?.state} ${event.venue?.address?.zip}`}
+                    </p>
+                  </>
+                ) : (
+                  'Check back soon for details about the venue'
+                )}
+              </li>
+            )}
+            {!event.privateEvent && (
+              <li>
+                <h4>Tickets:</h4>
 
-              {event.soldOut ? (
-                'Sold Out'
-              ) : event.getTickets ? (
-                <>
-                  <p>Tickets Available</p>
-                  <p>{event.price ? `${event.price}` : 'Free'}</p>
-                  <Button
-                    href={event.getTickets}
-                    variant='primary'
-                    size='md'
-                    fullWidth
-                  >
-                    <IoTicketOutline />
-                    Get Tickets
-                  </Button>
-                </>
-              ) : (
-                'Check back soon for details about tickets'
-              )}
-            </li>
+                {event.soldOut ? (
+                  'Sold Out'
+                ) : event.getTickets ? (
+                  <>
+                    <p>Tickets Available</p>
+                    {displayPrice && <p>{displayPrice}</p>}
+                    <Button
+                      href={event.getTickets}
+                      variant='primary'
+                      size='md'
+                      fullWidth
+                    >
+                      <IoTicketOutline />
+                      Get Tickets
+                    </Button>
+                  </>
+                ) : (
+                  'Check back soon for details about tickets'
+                )}
+              </li>
+            )}
           </ul>
         </div>
       </main>

@@ -17,6 +17,10 @@ interface GalleryImageItem {
   type?: 'image' | 'video'
 }
 
+const hasUsableSrc = (value?: string | null) => {
+  return Boolean(value && value.trim().length > 0)
+}
+
 export type GalleryItem = {
   _id: string
   title: string
@@ -62,23 +66,32 @@ export default function Gallery({
   }
 
   // Convert Sanity items to gallery items
-  const items: GalleryImageItem[] = galleryItems.map((item) => {
-    let original = ''
+  const items: GalleryImageItem[] = galleryItems
+    .map((item) => {
+      let original: string | null = null
 
-    // Get the right URL based on media type
-    if (item.mediaType === 'image' && item.imageContent?.asset) {
-      original = urlForImage(item.imageContent.asset).width(1200).url() || ''
-    } else if (item.mediaType === 'video' && item.videoContent?.asset?.url) {
-      original = item.videoContent.asset.url
-    }
+      // Get the right URL based on media type
+      if (item.mediaType === 'image' && item.imageContent?.asset) {
+        const imageUrl = urlForImage(item.imageContent.asset).width(1200).url()
+        original = hasUsableSrc(imageUrl) ? imageUrl : null
+      } else if (item.mediaType === 'video' && item.videoContent?.asset?.url) {
+        original = hasUsableSrc(item.videoContent.asset.url)
+          ? item.videoContent.asset.url
+          : null
+      }
 
-    return {
-      original,
-      originalAlt: item.alt || item.title,
-      caption: item.caption,
-      type: item.mediaType,
-    }
-  })
+      return {
+        original: original || '',
+        originalAlt: item.alt || item.title,
+        caption: item.caption,
+        type: item.mediaType,
+      }
+    })
+    .filter((item) => hasUsableSrc(item.original))
+
+  if (items.length === 0) {
+    return null
+  }
 
   // Handle slide change to pause any playing videos
   const handleSlide = () => {
