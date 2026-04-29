@@ -20,14 +20,14 @@ type BlockContent = string | PortableTextBlock[] | null | undefined
 // Helper function to extract text from block content and truncate it
 const getTextPreview = (
   blockContent: BlockContent,
-  maxLength: number = 250
+  maxLength: number = 250,
 ) => {
   if (!blockContent) return 'Not block content'
 
   // If it's already a string, just truncate it
   if (typeof blockContent === 'string') {
-    return blockContent.length > maxLength
-      ? blockContent.substring(0, maxLength) + '...'
+    return blockContent.length > maxLength ?
+        blockContent.substring(0, maxLength) + '...'
       : blockContent
   }
 
@@ -62,7 +62,7 @@ export default async function Posts() {
     <>
       <Header
         backgroundImage='/imgs/photos/stage-04.jpg'
-        title='fABBA Fans Page'
+        title='FABBA Fans Page'
         subtitle='Highlights from events, concerts, and more!'
         height='50vh'
       />
@@ -74,18 +74,17 @@ export default async function Posts() {
               (
                 <div key={index} className={styles.card}>
                   <div className={styles.imageContainer}>
-                    {post.mainImage?.asset?.url ? (
+                    {post.mainImage?.asset?.url ?
                       <Image
                         src={post.mainImage?.asset?.url}
                         alt={post.mainImage?.alt || post.title || 'Post image'}
                         fill
                         className={styles.image}
                       />
-                    ) : (
-                      <div className={styles.fallbackImage}>
+                    : <div className={styles.fallbackImage}>
                         <span className={styles.fallbackText}></span>
                       </div>
-                    )}
+                    }
                   </div>
                   <div className={styles.cardContent}>
                     {post.publishedAt && (
@@ -111,7 +110,7 @@ export default async function Posts() {
                   </div>
                 </div>
               )
-            )
+            ),
           )}
         </div>
       </section>

@@ -37,6 +37,7 @@
       color: var(--secondary);
       paint-order: stroke fill;
       -webkit-text-stroke: 0.1rem black;
+      text-align: center;
     }
   }
 

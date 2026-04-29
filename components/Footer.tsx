@@ -9,7 +9,7 @@ export default function Footer() {
       <div className='container'>
         <Image
           src='/imgs/logos/logo.png'
-          alt='The fABBA Show Logo'
+          alt='The FABBA Show Logo'
           width={200}
           height={200}
         />

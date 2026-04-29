@@ -46,25 +46,25 @@ export default async function Home() {
         <div className={`container ${styles.mainContent}`}>
           <div className={styles.textContent}>
             <h1>
-              <span>Introducing</span>The fABBA Show
+              <span>Introducing</span>The FABBA Show
               <span>EXPERIENCE ABBA LIKE NEVER BEFORE!</span>
             </h1>
             <p>
               Step into a time machine and witness ABBA live in their prime with
-              The fABBA Show, the sensational stage production that&apos;s
+              The FABBA Show, the sensational stage production that&apos;s
               taking audiences by storm all across the United States! This
               isn&apos;t just a tribute – it&apos;s a vibrant, theatrical
               journey celebrating the music and story of ABBA, the Swedish
               supergroup that conquered the world.
             </p>
             <p>
-              Prepare to be amazed by The fABBA Show&apos;s cast of incredibly
+              Prepare to be amazed by The FABBA Show&apos;s cast of incredibly
               talented musicians and performers who embody the spirit and sound
               of Agnetha, Björn, Benny, and Anni-Frid. From note-perfect
               renditions of your favorite classics that will have you singing
               along at the top of your lungs, to exciting, modernized
               arrangements that breathe new life into these timeless hits, The
-              fABBA Show delivers a musical experience like no other.
+              FABBA Show delivers a musical experience like no other.
             </p>
             <p>
               It&apos;s more than just the music. Immerse yourself in the

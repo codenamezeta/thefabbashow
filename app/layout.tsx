@@ -22,7 +22,7 @@ const notoSans = Noto_Sans({
 // })
 
 export const metadata: Metadata = {
-  title: 'The fABBA Show',
+  title: 'The FABBA Show',
   authors: [{ name: 'a2zeta' }],
   creator: 'a2zeta',
   description: 'An a2zeta Project',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 //* Define the logo and navigation items
 const logo = {
   src: '/imgs/logos/logo.png',
-  alt: 'The fABBA Show Logo',
+  alt: 'The FABBA Show Logo',
   width: 800,
   height: 800,
 }
